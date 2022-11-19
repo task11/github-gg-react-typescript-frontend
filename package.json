@@ -13,6 +13,7 @@
   "scripts": {
     "postinstall": "husky install",
     "format": "prettier . --write",
+    "format:check": "prettier . --check",
     "lint:fix": "eslint --fix src/**/*.ts{,x}",
     "lint": "eslint src/**/*.ts{,x}",
     "start": "react-scripts start",
