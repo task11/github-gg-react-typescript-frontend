@@ -20,7 +20,7 @@ export default function App() {
         <button type="button" onClick={onChangeTheme}>
           버튼
         </button>
-        <span>글자</span>
+        <span>hel</span>
       </StyledMain>
     </CustomThemeProvider>
   );
