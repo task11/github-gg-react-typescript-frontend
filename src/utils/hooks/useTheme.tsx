@@ -5,6 +5,7 @@ import { themeAtom } from '../../store';
 
 import { Mode } from '../../types';
 import { THEME_MODE } from '../common';
+import LocalService from '../services/Local.service';
 
 export function useTheme() {
   const [theme, setTheme] = useRecoilState(themeAtom);
@@ -14,11 +15,11 @@ export function useTheme() {
       theme === THEME_MODE.dark ? THEME_MODE.light : THEME_MODE.dark;
     setTheme(newTheme);
 
-    localStorage.setItem('theme', newTheme);
+    LocalService.set('theme', newTheme);
   }, [theme]);
 
   useLayoutEffect(() => {
-    const currentTheme = localStorage.getItem('theme') as Mode;
+    const currentTheme = LocalService.get('theme') as Mode;
 
     if (
       currentTheme &&
