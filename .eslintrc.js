@@ -35,7 +35,6 @@ module.exports = {
     'no-useless-escape': ['error'],
     'linebreak-style': [0, 'error', 'windows'],
     'react/destructuring-assignment': ['error', 'always'],
-    'jsx-quotes': ['error', 'prefer-single'],
     'switch-colon-spacing': ['error'],
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
     'react/prop-types': 'off',
