@@ -1,13 +1,27 @@
-import { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
+import { GlobalStyle, CustomThemeProvider } from './styles';
 
-import GlobalStyle from './styles/GlobalStyle';
-import defaultTheme from './styles/theme';
+import { useTheme } from './utils/hooks';
+
+const StyledMain = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: ${(props) => props.theme.bgColor.background};
+  color: ${(props) => props.theme.fontColor.default};
+  transition: background 0.3s ease-in, color 0.2s ease-in;
+`;
 
 export default function App() {
+  const { onChangeTheme } = useTheme();
   return (
-    <ThemeProvider theme={defaultTheme}>
+    <CustomThemeProvider>
       <GlobalStyle />
-      <div>helooo</div>
-    </ThemeProvider>
+      <StyledMain>
+        <button type="button" onClick={onChangeTheme}>
+          버튼
+        </button>
+        <span>hel</span>
+      </StyledMain>
+    </CustomThemeProvider>
   );
 }
