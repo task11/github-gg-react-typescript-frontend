@@ -5,23 +5,22 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
-    name: 해당 프로젝트 배포를 시작합니다.
+  Continuous_Integration:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [18.x]
     steps:
       - name: 체크아웃 액션을 사용합니다.
-      - uses: actions/checkout@main
-      - name: ${{matrix.node_version}}을 설치합니다.
-        uses: actions/setup-node@v1
+        uses: actions/checkout@v3
+      - name: Node.js ${{ matrix.node-version }}을 설치합니다.
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node_version}}
+          node-version: ${{ matrix.node-version }}
       - name: NPM 패키지를 설치합니다.
-      - run: npm ci
+        run: npm ci
       - name: 프로젝트를 빌드합니다.
-      - run: npm run build
+        run: npm run build
       - name: S3에 배포를 시작합니다.
         uses: jakejarvis/s3-sync-action@master
         with:
