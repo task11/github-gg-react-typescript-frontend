@@ -1,13 +1,10 @@
-# Getting Started with Boilerplate-react-typescript
+# Github.gg
 
-## Description
+## 배포링크
 
-- This repository is a code for react-typescript users.
-- This boilerplate code has pre-commit / commit-lint settings using husky hooks
+[github.gg](http://imjaykim-personal-bucket.s3-website.ap-northeast-2.amazonaws.com/)
 
-## How to use
-
-### `start project`
+## 프로젝트 실행 방법
 
 ```bash
 npm install
@@ -15,25 +12,12 @@ npm install
 npm start
 ```
 
-### `Linting codes`
-
-```bash
-npm run lint
-
-npm run lint:fix
-```
-
-### `Formatting codes`
-
-```bash
-npm run format
-```
-
 ## Library
 
-- `react` : v18.2.0
-- `typescript` : v4.8.4
-- `styled-components` : v5.3.6
-- `styled-reset` : v4.4.2
-- `husky` : v8.0.2
-- `prettier` : v2.7.1
+<p align="center">
+  <img src =https://img.shields.io/badge/react-v18.2.0-61DAFB?">
+  <img src =https://img.shields.io/badge/typescript-v4.8.4-3178C6?">
+  <img src =https://img.shields.io/badge/recoil-blue?">
+  <img src =https://img.shields.io/badge/react_query-red?">
+  <img src =https://img.shields.io/badge/styled_components-v4.8.4-FF69B4?">
+</p>
