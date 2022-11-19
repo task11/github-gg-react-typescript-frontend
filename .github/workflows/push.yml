@@ -3,7 +3,6 @@ name: Continuous Deployment when merged into main
 on:
   push:
     branches: [main]
-  workflow_dispatch:
 
 jobs:
   deploy:
