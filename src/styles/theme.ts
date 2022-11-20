@@ -1,16 +1,20 @@
 export const darkTheme = {
   bgColor: {
     background: '#121212',
-    header: '#202020',
+    header: '#3F4E4F',
+    modal: '#000000',
     card: '#333333',
   },
   fontColor: {
     default: '#ECECEC',
+    header: '#ECECEC',
     accent: '#6060f9',
+    hover: '#FFFFFF',
   },
   borderColor: {
     default: '#121212',
   },
+  close: '#333333',
   inputColor: 'whitesmoke',
   buttonColor: 'whitesmoke',
   buttonTextColor: '#333333',
@@ -20,17 +24,21 @@ export const darkTheme = {
 
 export const lightTheme = {
   bgColor: {
-    background: 'whitesmoke',
-    header: 'white',
-    card: 'white',
+    background: '#DCD7C9',
+    header: '#3F4E4F',
+    modal: '#FFFFFF',
+    card: '#ECECEC',
   },
   fontColor: {
     default: '#333333',
+    header: '#ECECEC',
     accent: '#30336b',
+    hover: '#3F4E4F',
   },
   borderColor: {
     default: '#121212',
   },
+  close: 'black',
   inputColor: 'dark',
   buttonColor: 'white',
   buttonTextColor: '#333333',

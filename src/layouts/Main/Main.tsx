@@ -5,12 +5,13 @@ import { StyledMain } from './Main.style';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Content from '../Content/Content';
+import Navigation from '../../components/Navigation/Navigation';
 
 export default function Main() {
   return (
     <StyledMain>
       <Header>
-        <nav>aa</nav>
+        <Navigation />
       </Header>
       <Content>
         <Outlet />
