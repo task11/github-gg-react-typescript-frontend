@@ -1,6 +1,9 @@
 import { atom } from 'recoil';
 
-export const themeAtom = atom({
+import { Mode } from '../types';
+import { THEME_MODE } from '../utils/common';
+
+export const themeAtom = atom<Mode>({
   key: 'Theme',
-  default: 'light',
+  default: THEME_MODE.light,
 });
