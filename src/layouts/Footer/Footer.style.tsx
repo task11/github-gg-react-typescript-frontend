@@ -6,6 +6,7 @@ export const StyledFooter = styled.footer`
   padding: 24px 0px;
   background-color: ${(props) => props.theme.bgColor.background};
   color: ${(props) => props.theme.fontColor.default};
+  transition: background 0.3s ease-in, color 0.2s ease-in;
 `;
 
 export const StyledFooterWrapper = styled.div`
@@ -24,6 +25,7 @@ export const StyledLogoWrapper = styled.strong`
 
 export const StyledFooterItem = styled.div`
   flex-basis: 100px;
+
   strong {
     font-weight: 500;
   }
