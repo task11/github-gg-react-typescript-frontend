@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+
 import { RecoilRoot } from 'recoil';
 
 import App from './App';
@@ -11,6 +12,6 @@ describe('App', () => {
       </RecoilRoot>,
     );
 
-    expect(queryByText(/hel/)).not.toBeNull();
+    expect(queryByText(/Home/)).not.toBeNull();
   });
 });
