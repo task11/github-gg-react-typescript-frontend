@@ -1,8 +1,8 @@
 import styled, { CSSProp } from 'styled-components';
 
-type Props = {
+interface Props {
   sizeStyle: CSSProp;
-};
+}
 
 export const StyledLogo = styled.img<Props>`
   ${(p) => p.sizeStyle}

@@ -1,8 +1,8 @@
 import { StyledContent } from './Content.style';
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
 export default function Content({ children }: Props) {
   return <StyledContent>{children}</StyledContent>;

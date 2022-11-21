@@ -7,11 +7,11 @@ import {
   StyledModalContents,
 } from './ModalFrame.style';
 
-type Props = {
+interface Props {
   handleModal: (e: React.MouseEvent<HTMLDivElement>) => void;
   state: boolean;
   children: React.ReactNode;
-};
+}
 
 export default function ModalFrame({ handleModal, state, children }: Props) {
   return state ? (
