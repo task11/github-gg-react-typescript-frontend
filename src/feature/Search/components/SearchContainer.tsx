@@ -31,6 +31,10 @@ export default function SearchContainer() {
     onSearchUsers();
   };
 
+  const onSearchQuery = (query: string) => {
+    console.log(query);
+  };
+
   return (
     <StyledSearchContainer>
       <SearchHeader />
@@ -42,7 +46,7 @@ export default function SearchContainer() {
         handleSubmit={handleSubmit}
         initSearchQuery={initSearchQuery}
       />
-      <SearchResult isSearching={isSearching} searchQuery={searchQuery} />
+      <SearchResult searchQuery={searchQuery} onSearchQuery={onSearchQuery} />
     </StyledSearchContainer>
   );
 }

@@ -1,4 +1,5 @@
 import Icons from '../../../../components/Icons';
+import SearchResultItem from './SearchResultItem';
 import {
   StyledIconWrapper,
   StyledMatchWord,
@@ -9,10 +10,14 @@ import {
 
 interface Props {
   searchQuery: string;
+  onSearchQuery: (query: string) => void;
 }
 
-export default function SearchResultList({ searchQuery }: Props) {
-  if (true) {
+export default function SearchResultList({
+  searchQuery,
+  onSearchQuery,
+}: Props) {
+  if (false) {
     return (
       <StyledWithoutResult>
         <span>검색 결과가 없습니다.</span>
@@ -21,8 +26,8 @@ export default function SearchResultList({ searchQuery }: Props) {
   }
   return (
     <StyledResultWrapper>
-      {!!searchQuery && (
-        <StyledResultColumn>
+      {searchQuery.length > 0 && (
+        <StyledResultColumn onClick={() => onSearchQuery(searchQuery)}>
           <StyledIconWrapper>
             <Icons.Search />
           </StyledIconWrapper>
@@ -30,12 +35,7 @@ export default function SearchResultList({ searchQuery }: Props) {
         </StyledResultColumn>
       )}
       <div className="recommend-title">추천 검색어</div>
-      <StyledResultColumn>
-        <StyledIconWrapper>
-          <Icons.Search />
-        </StyledIconWrapper>
-        <StyledMatchWord>task11</StyledMatchWord>
-      </StyledResultColumn>
+      <SearchResultItem onSearchQuery={onSearchQuery} />
     </StyledResultWrapper>
   );
 }
