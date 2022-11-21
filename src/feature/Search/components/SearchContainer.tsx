@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import useSearchQuery from '../hooks/useSearchQuery';
-import { StyledSearchContainer } from './SearchContainer.style';
 
 import SearchForm from './SearchForm/SearchForm';
 import SearchHeader from './SearchHeader/SearchHeader';
 import SearchResult from './SearchResult/SearchResult';
+
+import { StyledSearchContainer } from './SearchContainer.style';
 
 export default function SearchContainer() {
   const {
@@ -15,17 +15,13 @@ export default function SearchContainer() {
     initSearchQuery,
   } = useSearchQuery();
 
-  const onSearchUsers = () => {
-    console.log(searchQuery);
+  const onSearchQuery = (query: string) => {
+    console.log(query);
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    onSearchUsers();
-  };
-
-  const onSearchQuery = (query: string) => {
-    console.log(query);
+    onSearchQuery(searchQuery);
   };
 
   return (
@@ -39,7 +35,11 @@ export default function SearchContainer() {
         handleSubmit={handleSubmit}
         initSearchQuery={initSearchQuery}
       />
-      <SearchResult searchQuery={searchQuery} onSearchQuery={onSearchQuery} />
+      <SearchResult
+        isSearching={isSearching}
+        searchQuery={searchQuery}
+        onSearchQuery={onSearchQuery}
+      />
     </StyledSearchContainer>
   );
 }

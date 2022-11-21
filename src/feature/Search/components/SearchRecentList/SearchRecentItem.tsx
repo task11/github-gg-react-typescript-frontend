@@ -6,7 +6,7 @@ interface Props {
 
 export default function SearchRecentItem({ onSearchQuery }: Props) {
   return (
-    <StyledRecentItem onClick={() => onSearchQuery('task2')}>
+    <StyledRecentItem onMouseDown={() => onSearchQuery('task2')}>
       task2
     </StyledRecentItem>
   );

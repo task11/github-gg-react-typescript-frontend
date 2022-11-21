@@ -5,7 +5,6 @@ export const StyledResultColumn = styled.div`
   align-items: center;
   display: flex;
   padding: 12px 12px;
-  cursor: pointer;
   word-break: break-all;
   gap: 6px;
 

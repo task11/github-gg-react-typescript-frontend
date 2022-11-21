@@ -4,14 +4,20 @@ import SearchResultList from '../SearchResultList/SearchResultList';
 import { StyledSearchResult } from './SearchResult.style';
 
 interface Props {
+  isSearching: boolean;
   searchQuery: string;
   onSearchQuery: (query: string) => void;
 }
 
-export default function SearchResult({ searchQuery, onSearchQuery }: Props) {
-  if (searchQuery.length === 0) {
+export default function SearchResult({
+  isSearching,
+  searchQuery,
+  onSearchQuery,
+}: Props) {
+  if (!isSearching) {
     return <></>;
   }
+
   return (
     <StyledSearchResult>
       <SearchResultList

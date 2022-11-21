@@ -11,7 +11,7 @@ interface Props {
 
 export default function SearchResultItem({ onSearchQuery }: Props) {
   return (
-    <StyledResultColumn onClick={() => onSearchQuery('task11')}>
+    <StyledResultColumn onMouseDown={() => onSearchQuery('task11')}>
       <StyledIconWrapper>
         <Icons.Search />
       </StyledIconWrapper>

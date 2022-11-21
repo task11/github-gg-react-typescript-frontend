@@ -27,7 +27,7 @@ export default function SearchResultList({
   return (
     <StyledResultWrapper>
       {searchQuery.length > 0 && (
-        <StyledResultColumn onClick={() => onSearchQuery(searchQuery)}>
+        <StyledResultColumn onMouseDown={() => onSearchQuery(searchQuery)}>
           <StyledIconWrapper>
             <Icons.Search />
           </StyledIconWrapper>
