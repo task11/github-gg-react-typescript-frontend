@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useSearchQuery from '../hooks/useSearchQuery';
 import { StyledSearchContainer } from './SearchContainer.style';
 
 import SearchForm from './SearchForm/SearchForm';
@@ -6,21 +7,13 @@ import SearchHeader from './SearchHeader/SearchHeader';
 import SearchResult from './SearchResult/SearchResult';
 
 export default function SearchContainer() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isFocus, setIsFocus] = useState(false);
-  const isSearching = searchQuery !== '' || isFocus;
-
-  const handleSearchQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      target: { value },
-    } = event;
-
-    setSearchQuery(value);
-  };
-
-  const initSearchQuery = () => {
-    setSearchQuery('');
-  };
+  const {
+    searchQuery,
+    isSearching,
+    setIsFocus,
+    handleSearchQuery,
+    initSearchQuery,
+  } = useSearchQuery();
 
   const onSearchUsers = () => {
     console.log(searchQuery);
