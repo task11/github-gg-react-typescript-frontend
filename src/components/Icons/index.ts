@@ -5,6 +5,9 @@ import LightMode from './LightMode';
 import Close from './Close';
 import Rank from './Rank';
 import Bookmark from './Bookmark';
+import SearchLogo from './SearchLogo';
+import Branch from './Branch';
+import Search from './Search';
 
 export default {
   ArrowDown,
@@ -14,4 +17,7 @@ export default {
   Close,
   Rank,
   Bookmark,
+  SearchLogo,
+  Branch,
+  Search,
 };
