@@ -33,10 +33,7 @@ describe('SearchResult', () => {
   const onSearchQuery = jest.fn();
   const navigateToSearhDetail = jest.fn();
 
-  const renderer = (
-    searchResult: UserProps[] = [],
-    isSearching: boolean = true,
-  ) => {
+  const renderer = (searchResult: UserProps[] = [], isSearching = true) => {
     const { getByText } = render(
       <SearchResult
         isSearching={isSearching}
