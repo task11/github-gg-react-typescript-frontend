@@ -1,4 +1,8 @@
 import useSearchQuery from '../hooks/useSearchQuery';
+import useHandleSearch from '../hooks/useHandleSearch';
+import useDebounce from '../../../utils/hooks/useDebounce';
+
+import useSearch from '../api/useSearch';
 
 import SearchForm from './SearchForm/SearchForm';
 import SearchHeader from './SearchHeader/SearchHeader';
@@ -15,14 +19,11 @@ export default function SearchContainer() {
     initSearchQuery,
   } = useSearchQuery();
 
-  const onSearchQuery = (query: string) => {
-    console.log(query);
-  };
+  const { handleSubmit, onSearchQuery, navigateToSearhDetail } =
+    useHandleSearch(searchQuery);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    onSearchQuery(searchQuery);
-  };
+  const debounceSearchQuery = useDebounce(searchQuery, 500);
+  const { data } = useSearch(debounceSearchQuery);
 
   return (
     <StyledSearchContainer>
@@ -38,7 +39,9 @@ export default function SearchContainer() {
       <SearchResult
         isSearching={isSearching}
         searchQuery={searchQuery}
+        searchResult={data?.items}
         onSearchQuery={onSearchQuery}
+        navigateToSearhDetail={navigateToSearhDetail}
       />
     </StyledSearchContainer>
   );
