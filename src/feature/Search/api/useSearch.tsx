@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import server from '../../../lib/server';
+import server from '../../../lib/axios';
 
 import { SearchUserResponseProps } from '../../../types/user';
 import { userCache } from '../../../utils/models/userCache';
