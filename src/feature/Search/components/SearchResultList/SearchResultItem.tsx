@@ -1,4 +1,6 @@
 import Icons from '../../../../components/Icons';
+import { QueryDataProps } from '../../../../types/queryData';
+import { UserProps } from '../../../../types/user';
 import {
   StyledIconWrapper,
   StyledMatchWord,
@@ -6,16 +8,28 @@ import {
 } from './SearchResultList.style';
 
 interface Props {
-  onSearchQuery: (query: string) => void;
+  result: UserProps;
+  onSearchQuery: (queryData: QueryDataProps) => void;
 }
 
-export default function SearchResultItem({ onSearchQuery }: Props) {
+export default function SearchResultItem({ result, onSearchQuery }: Props) {
+  const { id, avatar_url: avatarUrl, login: username } = result;
+
   return (
-    <StyledResultColumn onMouseDown={() => onSearchQuery('task11')}>
+    <StyledResultColumn
+      onMouseDown={() => onSearchQuery({ id, avatarUrl, username })}
+    >
       <StyledIconWrapper>
         <Icons.Search />
       </StyledIconWrapper>
-      <StyledMatchWord>task11</StyledMatchWord>
+      <img
+        style={{ borderRadius: '99%' }}
+        width="16px"
+        height="16px"
+        src={avatarUrl}
+        alt="avatar"
+      />
+      <StyledMatchWord>{username}</StyledMatchWord>
     </StyledResultColumn>
   );
 }

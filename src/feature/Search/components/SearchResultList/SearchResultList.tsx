@@ -1,5 +1,9 @@
 import Icons from '../../../../components/Icons';
 import SearchResultItem from './SearchResultItem';
+
+import { UserProps } from '../../../../types/user';
+import { QueryDataProps } from '../../../../types/queryData';
+
 import {
   StyledIconWrapper,
   StyledMatchWord,
@@ -10,14 +14,16 @@ import {
 
 interface Props {
   searchQuery: string;
-  onSearchQuery: (query: string) => void;
+  searchResult: UserProps[] | undefined;
+  onSearchQuery: (queryData: QueryDataProps) => void;
 }
 
 export default function SearchResultList({
   searchQuery,
+  searchResult,
   onSearchQuery,
 }: Props) {
-  if (false) {
+  if (!searchResult?.length || !searchQuery.length) {
     return (
       <StyledWithoutResult>
         <span>검색 결과가 없습니다.</span>
@@ -27,7 +33,7 @@ export default function SearchResultList({
   return (
     <StyledResultWrapper>
       {searchQuery.length > 0 && (
-        <StyledResultColumn onMouseDown={() => onSearchQuery(searchQuery)}>
+        <StyledResultColumn>
           <StyledIconWrapper>
             <Icons.Search />
           </StyledIconWrapper>
@@ -35,7 +41,13 @@ export default function SearchResultList({
         </StyledResultColumn>
       )}
       <div className="recommend-title">추천 검색어</div>
-      <SearchResultItem onSearchQuery={onSearchQuery} />
+      {searchResult.map((result) => (
+        <SearchResultItem
+          key={result.id}
+          result={result}
+          onSearchQuery={onSearchQuery}
+        />
+      ))}
     </StyledResultWrapper>
   );
 }

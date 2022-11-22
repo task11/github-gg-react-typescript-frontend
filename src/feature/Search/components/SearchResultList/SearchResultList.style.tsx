@@ -7,6 +7,7 @@ export const StyledResultColumn = styled.div`
   padding: 12px 12px;
   word-break: break-all;
   gap: 6px;
+  cursor: default;
 
   &:hover {
     background: rgb(248, 249, 250);
@@ -28,17 +29,19 @@ export const StyledMatchWord = styled.div`
 
 export const StyledWithoutResult = styled.section`
   width: 100%;
-  padding-top: 12px;
-  height: 60px;
+  padding: 16px 0;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 18px;
+  font-weight: 600;
 `;
 
 export const StyledResultWrapper = styled.section`
   display: flex;
   flex-direction: column;
-
+  padding-bottom: 12px;
   svg {
     width: 16px;
     height: 16px;
