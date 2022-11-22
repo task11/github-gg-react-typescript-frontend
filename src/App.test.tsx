@@ -1,17 +1,22 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render } from '@testing-library/react';
 
 import { RecoilRoot } from 'recoil';
 
 import App from './App';
 
+const queryClient = new QueryClient();
+
 describe('App', () => {
   it('Shows App test', () => {
     const { queryByText } = render(
-      <RecoilRoot>
-        <App />
-      </RecoilRoot>,
+      <QueryClientProvider client={queryClient}>
+        <RecoilRoot>
+          <App />
+        </RecoilRoot>
+      </QueryClientProvider>,
     );
 
-    expect(queryByText(/Home/)).not.toBeNull();
+    expect(queryByText(/Task/)).not.toBeNull();
   });
 });

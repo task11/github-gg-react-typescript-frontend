@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { render, cleanup } from '@testing-library/react';
 
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
@@ -7,30 +8,21 @@ import NotFountPage from './pages/NotFoundPage/NotFountPage';
 
 afterEach(cleanup);
 
-describe('<App />', () => {
-  it('Renders as / ', () => {
-    const { getByText } = render(
-      <MemoryRouter>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<NotFountPage />} />
-        </Routes>
-      </MemoryRouter>,
-    );
+const queryClient = new QueryClient();
 
-    expect(getByText(/Home/i)).not.toBeNull();
-  });
-
+describe('<Router />', () => {
   it('Landing on a not found page', () => {
     const badRoute = '/bad';
 
     const { getByText } = render(
-      <MemoryRouter initialEntries={[badRoute]}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="*" element={<NotFountPage />} />
-        </Routes>
-      </MemoryRouter>,
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter initialEntries={[badRoute]}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="*" element={<NotFountPage />} />
+          </Routes>
+        </MemoryRouter>
+      </QueryClientProvider>,
     );
 
     expect(getByText(/404/i)).not.toBeNull();

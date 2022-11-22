@@ -4,9 +4,9 @@ import { darkTheme, lightTheme } from './theme';
 import { useTheme } from '../utils/hooks';
 import { THEME_MODE } from '../utils/common';
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
 export function CustomThemeProvider({ children }: Props) {
   const { theme } = useTheme();

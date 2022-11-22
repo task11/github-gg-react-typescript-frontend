@@ -7,10 +7,10 @@ import { StyledLogo } from './Logo.style';
 
 import { SIZES } from './Logo.variant';
 
-type Props = {
+interface Props {
   size: 'sm' | 'md' | 'lg';
   mode: Mode;
-};
+}
 
 export default function Logo({ size, mode }: Props) {
   const sizeStyle = SIZES[size];
