@@ -1,6 +1,6 @@
 export const darkTheme = {
   bgColor: {
-    background: '#333333',
+    background: '#4A4A4D',
     header: '#3F4E4F',
     modal: '#000000',
     card: '#333333',
