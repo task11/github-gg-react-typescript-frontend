@@ -1,13 +1,40 @@
+import { QueryDataProps } from '../../../../types/queryData';
+
 import { StyledRecentItem } from './SearchRecentList.style';
 
 interface Props {
-  onSearchQuery: (query: string) => void;
+  recent: QueryDataProps;
+  onSearchQuery: (queryData: QueryDataProps) => void;
+  navigateToSearhDetail: (query: string) => void;
 }
 
-export default function SearchRecentItem({ onSearchQuery }: Props) {
+export default function SearchRecentItem({
+  recent,
+  onSearchQuery,
+  navigateToSearhDetail,
+}: Props) {
+  const { id, avatarUrl, username } = recent;
+
+  const handleSearchRecentItem = () => {
+    if (id) {
+      onSearchQuery({ id, avatarUrl, username });
+    } else {
+      navigateToSearhDetail(username);
+    }
+  };
+
   return (
-    <StyledRecentItem onMouseDown={() => onSearchQuery('task2')}>
-      task2
+    <StyledRecentItem onMouseDown={handleSearchRecentItem}>
+      {avatarUrl && (
+        <img
+          style={{ borderRadius: '99%' }}
+          width="16px"
+          height="16px"
+          src={avatarUrl}
+          alt="avatar"
+        />
+      )}
+      {username}
     </StyledRecentItem>
   );
 }
