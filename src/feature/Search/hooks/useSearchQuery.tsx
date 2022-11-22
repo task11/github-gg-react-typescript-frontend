@@ -10,7 +10,7 @@ export default function useSearchQuery() {
       target: { value },
     } = event;
 
-    setSearchQuery(value);
+    setSearchQuery(value.trimStart());
   };
 
   const initSearchQuery = () => {
