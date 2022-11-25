@@ -8,9 +8,9 @@ import SearchForm from './SearchForm/SearchForm';
 import SearchHeader from './SearchHeader/SearchHeader';
 import SearchResult from './SearchResult/SearchResult';
 
-import { StyledSearchContainer } from './SearchContainer.style';
+import { StyledSearchFormContainer } from './SearchFormContainer.style';
 
-export default function SearchContainer() {
+export default function SearchFormContainer() {
   const {
     searchQuery,
     isSearching,
@@ -26,7 +26,7 @@ export default function SearchContainer() {
   const { data } = useSearch(debounceSearchQuery);
 
   return (
-    <StyledSearchContainer>
+    <StyledSearchFormContainer>
       <SearchHeader />
       <SearchForm
         searchQuery={searchQuery}
@@ -43,6 +43,6 @@ export default function SearchContainer() {
         onSearchQuery={onSearchQuery}
         navigateToSearhDetail={navigateToSearhDetail}
       />
-    </StyledSearchContainer>
+    </StyledSearchFormContainer>
   );
 }
