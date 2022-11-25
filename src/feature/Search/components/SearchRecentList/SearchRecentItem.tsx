@@ -1,3 +1,4 @@
+import Avatar from '../../../../components/Avatar/Avatar';
 import { QueryDataProps } from '../../../../types/queryData';
 
 import { StyledRecentItem } from './SearchRecentList.style';
@@ -25,15 +26,7 @@ export default function SearchRecentItem({
 
   return (
     <StyledRecentItem onMouseDown={handleSearchRecentItem}>
-      {avatarUrl && (
-        <img
-          style={{ borderRadius: '99%' }}
-          width="16px"
-          height="16px"
-          src={avatarUrl}
-          alt="avatar"
-        />
-      )}
+      {avatarUrl && <Avatar src={avatarUrl} size="sm" />}
       {username}
     </StyledRecentItem>
   );

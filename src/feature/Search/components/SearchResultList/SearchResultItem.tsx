@@ -1,6 +1,9 @@
+import Avatar from '../../../../components/Avatar/Avatar';
 import Icons from '../../../../components/Icons';
+
 import { QueryDataProps } from '../../../../types/queryData';
 import { UserProps } from '../../../../types/user';
+
 import {
   StyledIconWrapper,
   StyledMatchWord,
@@ -22,13 +25,7 @@ export default function SearchResultItem({ result, onSearchQuery }: Props) {
       <StyledIconWrapper>
         <Icons.Search />
       </StyledIconWrapper>
-      <img
-        style={{ borderRadius: '99%' }}
-        width="16px"
-        height="16px"
-        src={avatarUrl}
-        alt="avatar"
-      />
+      <Avatar src={avatarUrl} size="sm" />
       <StyledMatchWord>{username}</StyledMatchWord>
     </StyledResultColumn>
   );
