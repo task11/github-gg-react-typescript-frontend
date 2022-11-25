@@ -41,7 +41,7 @@ export default function Navigation() {
       </StyledNavItem>
       {modalState && (
         <ReactPortal>
-          <NavMenu />
+          <NavMenu toggleModal={toggleModal} />
         </ReactPortal>
       )}
     </StyledNavigation>

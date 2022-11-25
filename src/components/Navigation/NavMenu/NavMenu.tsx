@@ -1,15 +1,19 @@
 import Icons from '../../Icons';
 import { StyledMenu, StyledMenuItem, StyledNavMenu } from './NavMenu.style';
 
-export default function NavMenu() {
+interface Props {
+  toggleModal: () => void;
+}
+
+export default function NavMenu({ toggleModal }: Props) {
   return (
     <StyledMenu>
       <StyledNavMenu>
-        <StyledMenuItem to="/rank">
-          <Icons.Rank />
-          <span>Rank</span>
+        <StyledMenuItem to="/" onClick={toggleModal}>
+          <Icons.SearchColor />
+          <span>Home</span>
         </StyledMenuItem>
-        <StyledMenuItem to="/bookmark">
+        <StyledMenuItem to="/bookmark" onClick={toggleModal}>
           <Icons.Bookmark />
           <span>Bookmark</span>
         </StyledMenuItem>
