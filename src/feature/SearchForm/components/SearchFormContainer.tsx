@@ -1,6 +1,6 @@
 import useSearchQuery from '../hooks/useSearchQuery';
 import useHandleSearch from '../hooks/useHandleSearch';
-import useDebounce from '../../../utils/hooks/useDebounce';
+import { useDebounce } from '../../../utils/hooks';
 
 import useSearch from '../api/useSearch';
 
