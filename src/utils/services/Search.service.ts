@@ -1,6 +1,6 @@
 import server from '../../lib/axios';
 
-import { SearchUserResponseProps } from '../../types/user';
+import { SearchUserResponseProps } from '../../types';
 
 class SearchService {
   getSearchFormList(query: string) {

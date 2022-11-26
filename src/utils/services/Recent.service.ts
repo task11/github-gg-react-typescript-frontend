@@ -1,4 +1,4 @@
-import { QueryDataProps, QueryDataPropsList } from '../../types/queryData';
+import { QueryDataProps, QueryDataPropsList } from '../../types';
 
 import LocalService from './Local.service';
 
