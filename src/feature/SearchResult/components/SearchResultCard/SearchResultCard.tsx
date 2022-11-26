@@ -1,13 +1,12 @@
 import Avatar from '../../../../components/Avatar/Avatar';
 import Icons from '../../../../components/Icons';
 
-import { QueryDataProps } from '../../../../types/queryData';
-import { UserProps } from '../../../../types/user';
+import { QueryDataProps, SearchUserProps } from '../../../../types';
 
 import { StyledResultCard, StyledResultInfo } from './SearchResultCard.style';
 
 interface Props {
-  result: UserProps;
+  result: SearchUserProps;
   onSearchQuery: (queryData: QueryDataProps) => void;
 }
 

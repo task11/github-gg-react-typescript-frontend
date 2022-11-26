@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { UserProps } from '../../../../types/user';
+import { SearchUserProps } from '../../../../types';
 
 import SearchResult from '../SearchResult/SearchResult';
 
@@ -33,7 +33,10 @@ describe('SearchResult', () => {
   const onSearchQuery = jest.fn();
   const navigateToSearhDetail = jest.fn();
 
-  const renderer = (searchResult: UserProps[] = [], isSearching = true) => {
+  const renderer = (
+    searchResult: SearchUserProps[] = [],
+    isSearching = true,
+  ) => {
     const { getByText } = render(
       <SearchResult
         isSearching={isSearching}
