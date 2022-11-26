@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import { CustomThemeProvider } from '../../../../styles';
 
-import SearchContainer from '../SearchContainer';
+import SearchContainer from '../SearchFormContainer';
 
 const queryClient = new QueryClient();
 

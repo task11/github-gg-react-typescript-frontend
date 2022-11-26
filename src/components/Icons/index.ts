@@ -3,7 +3,7 @@ import DarkMode from './DarkMode';
 import Github from './Github';
 import LightMode from './LightMode';
 import Close from './Close';
-import Rank from './Rank';
+import SearchColor from './SearchColor';
 import Bookmark from './Bookmark';
 import SearchLogo from './SearchLogo';
 import Branch from './Branch';
@@ -15,7 +15,7 @@ export default {
   Github,
   LightMode,
   Close,
-  Rank,
+  SearchColor,
   Bookmark,
   SearchLogo,
   Branch,
