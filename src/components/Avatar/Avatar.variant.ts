@@ -6,11 +6,11 @@ export const SIZES = {
     --avatar-height: 16px;
   `,
   md: css`
-    --avatar-width: 24px;
-    --avatar-height: 24px;
+    --avatar-width: 32px;
+    --avatar-height: 32px;
   `,
   lg: css`
-    --avatar-width: 40px;
-    --avatar-height: 40px;
+    --avatar-width: 120px;
+    --avatar-height: 120px;
   `,
 };
