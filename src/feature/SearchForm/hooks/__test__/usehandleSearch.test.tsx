@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 
 import { RecoilRoot } from 'recoil';
+
 import { QueryDataProps } from '../../../../types/queryData';
 
 import useHandleSearch from '../useHandleSearch';

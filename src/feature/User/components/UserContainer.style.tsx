@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledSearchResultContainer = styled.div`
+export const StyledUserContainer = styled.div`
   display: flex;
+  min-width: 300px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-`;
-
-export const StyledTarget = styled.div`
-  height: 1px;
+  gap: 30px;
 `;

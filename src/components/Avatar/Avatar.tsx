@@ -4,7 +4,7 @@ import { SIZES } from './Avatar.variant';
 
 interface Props {
   src: string;
-  size: 'sm' | 'md';
+  size: 'sm' | 'md' | 'lg';
 }
 
 export default function Avatar({ src, size }: Props) {

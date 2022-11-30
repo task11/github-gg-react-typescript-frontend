@@ -1,8 +1,7 @@
 import Icons from '../../../../components/Icons';
 import SearchResultItem from './SearchResultItem';
 
-import { UserProps } from '../../../../types/user';
-import { QueryDataProps } from '../../../../types/queryData';
+import { QueryDataProps, SearchUserProps } from '../../../../types';
 
 import {
   StyledIconWrapper,
@@ -14,7 +13,7 @@ import {
 
 interface Props {
   searchQuery: string;
-  searchResult: UserProps[] | undefined;
+  searchResult: SearchUserProps[] | undefined;
   onSearchQuery: (queryData: QueryDataProps) => void;
 }
 

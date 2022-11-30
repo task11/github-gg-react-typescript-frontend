@@ -1,15 +1,14 @@
 import SearchRecentList from '../SearchRecentList/SearchRecentList';
 import SearchResultList from '../SearchResultList/SearchResultList';
 
-import { UserProps } from '../../../../types/user';
-import { QueryDataProps } from '../../../../types/queryData';
+import { QueryDataProps, SearchUserProps } from '../../../../types';
 
 import { StyledSearchResult } from './SearchResult.style';
 
 interface Props {
   isSearching: boolean;
   searchQuery: string;
-  searchResult: UserProps[] | undefined;
+  searchResult: SearchUserProps[] | undefined;
   onSearchQuery: (queryData: QueryDataProps) => void;
   navigateToSearhDetail: (query: string) => void;
 }

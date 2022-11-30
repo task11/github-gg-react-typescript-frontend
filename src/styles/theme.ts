@@ -5,6 +5,7 @@ export const darkTheme = {
     modal: '#000000',
     card: '#333333',
     logo: '#ECECEC',
+    cardHover: '#595959',
   },
   fontColor: {
     default: '#ECECEC',
@@ -30,6 +31,7 @@ export const lightTheme = {
     modal: '#FFFFFF',
     card: '#ECECEC',
     logo: '#3F4E4F',
+    cardHover: '#f9f9f9',
   },
   fontColor: {
     default: '#333333',
@@ -40,6 +42,7 @@ export const lightTheme = {
   borderColor: {
     default: '#121212',
   },
+
   close: 'black',
   inputColor: 'dark',
   buttonColor: '#2C3639',

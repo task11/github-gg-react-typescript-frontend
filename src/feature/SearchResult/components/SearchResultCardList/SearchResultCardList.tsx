@@ -1,11 +1,11 @@
-import { QueryDataProps } from '../../../../types/queryData';
-import { UserProps } from '../../../../types/user';
+import { QueryDataProps, SearchUserProps } from '../../../../types';
+
 import SearchResultCard from '../SearchResultCard/SearchResultCard';
 
 import { StyledResultCardList } from './SearchResultCardList.style';
 
 interface Props {
-  searchResult: UserProps[];
+  searchResult: SearchUserProps[];
   onSearchQuery: (queryData: QueryDataProps) => void;
 }
 

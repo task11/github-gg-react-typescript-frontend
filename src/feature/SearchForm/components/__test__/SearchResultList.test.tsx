@@ -1,6 +1,6 @@
 import { fireEvent, render } from '@testing-library/react';
 
-import { UserProps } from '../../../../types/user';
+import { SearchUserProps } from '../../../../types';
 
 import SearchResultList from '../SearchResultList/SearchResultList';
 
@@ -32,7 +32,7 @@ const result = [
 describe('SearchResultList', () => {
   const onSearchQuery = jest.fn();
 
-  const renderer = (searchResult: UserProps[] = []) => {
+  const renderer = (searchResult: SearchUserProps[] = []) => {
     const { getByText } = render(
       <SearchResultList
         searchQuery="task11"
