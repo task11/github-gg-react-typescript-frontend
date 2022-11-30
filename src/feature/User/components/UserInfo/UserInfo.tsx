@@ -1,15 +1,22 @@
 import Avatar from '../../../../components/Avatar/Avatar';
 
+import { UserInfoProps } from '../../../../types';
+
 import { StyledUserInfo, StyledUserName } from './UserInfo.style';
 
-export default function UserInfo() {
+interface Props {
+  userInfo: UserInfoProps;
+}
+
+export default function UserInfo({ userInfo }: Props) {
+  const { avatar_url: avatarUrl, login: userId, name, bio } = userInfo;
   return (
     <StyledUserInfo>
-      <Avatar src="https://picsum.photos/200" size="lg" />
+      <Avatar src={avatarUrl} size="lg" />
       <StyledUserName>
-        <strong>login</strong>
-        <span className="username">username</span>
-        <span className="bio">FE developer</span>
+        <strong>{userId}</strong>
+        <span className="username">{name}</span>
+        <span className="bio">{bio}</span>
       </StyledUserName>
     </StyledUserInfo>
   );
