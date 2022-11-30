@@ -1,10 +1,13 @@
 import { useParams } from 'react-router-dom';
 
 import Avatar from '../../../components/Avatar/Avatar';
+import Icons from '../../../components/Icons';
 
 import {
+  StyledDropdown,
   StyledRepositoryTopic,
   StyledRepositoryTopicList,
+  StyledTarget,
   StyledUserContainer,
   StyledUserContent,
   StyledUserContentList,
@@ -60,12 +63,42 @@ export default function UserContainer() {
           <strong>algorithm-javascript-legacy</strong>
           <StyledRepositoryTopicList>
             <StyledRepositoryTopic>typescript</StyledRepositoryTopic>
-            <StyledRepositoryTopic>javascript</StyledRepositoryTopic>
+            <StyledRepositoryTopic>react</StyledRepositoryTopic>
+            <StyledRepositoryTopic>next</StyledRepositoryTopic>
           </StyledRepositoryTopicList>
+          <StyledDropdown>
+            <Icons.OutlineArrowDown />
+          </StyledDropdown>
         </StyledUserRepository>
-        <StyledUserRepository />
-        <StyledUserRepository />
-        <StyledUserRepository />
+        <StyledUserRepository>
+          <strong>algorithm-javascript-legacy</strong>
+          <StyledRepositoryTopicList>
+            <StyledRepositoryTopic>typescript</StyledRepositoryTopic>
+            <StyledRepositoryTopic>react</StyledRepositoryTopic>
+            <StyledRepositoryTopic>next</StyledRepositoryTopic>
+          </StyledRepositoryTopicList>
+          <StyledDropdown>
+            <Icons.OutlineArrowDown />
+          </StyledDropdown>
+        </StyledUserRepository>
+        <StyledUserRepository>
+          <strong>minirepo-vanilla-javascript-frontend</strong>
+          <StyledRepositoryTopicList>
+            <StyledRepositoryTopic>typescript</StyledRepositoryTopic>
+            <StyledRepositoryTopic>react</StyledRepositoryTopic>
+            <StyledRepositoryTopic>next</StyledRepositoryTopic>
+            <StyledRepositoryTopic>typescript</StyledRepositoryTopic>
+            <StyledRepositoryTopic>react</StyledRepositoryTopic>
+            <StyledRepositoryTopic>next</StyledRepositoryTopic>
+            <StyledRepositoryTopic>typescript</StyledRepositoryTopic>
+            <StyledRepositoryTopic>react</StyledRepositoryTopic>
+            <StyledRepositoryTopic>next</StyledRepositoryTopic>
+          </StyledRepositoryTopicList>
+          <StyledDropdown>
+            <Icons.OutlineArrowDown />
+          </StyledDropdown>
+        </StyledUserRepository>
+        <StyledTarget />
       </StyledUserRepositoryList>
     </StyledUserContainer>
   );
