@@ -1,14 +1,5 @@
 import styled from 'styled-components';
 
-export const StyledUserContainer = styled.div`
-  display: flex;
-  min-width: 300px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-`;
-
 export const StyledUserRepositoryListHeader = styled.header`
   font-size: 14px;
   font-weight: 300;
