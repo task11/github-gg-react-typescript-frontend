@@ -9,7 +9,10 @@ import RecentService from '../../../utils/services/Recent.service';
 import SearchResultCardList from './SearchResultCardList/SearchResultCardList';
 import SearchResultHeader from './SearchResultHeader/SearchResultHeader';
 
-import { StyledSearchResultContainer } from './SearchResultContainer.style';
+import {
+  StyledSearchResultContainer,
+  StyledTarget,
+} from './SearchResultContainer.style';
 import { QueryDataProps } from '../../../types/queryData';
 
 export default function SearchResultContainer() {
@@ -58,11 +61,7 @@ export default function SearchResultContainer() {
         searchResult={items}
         onSearchQuery={onSearchQuery}
       />
-      {isFetching ? (
-        <div>불러오는 중..</div>
-      ) : (
-        <div ref={ref} style={{ height: '1px' }} />
-      )}
+      {isFetching ? <div>불러오는 중..</div> : <StyledTarget ref={ref} />}
     </StyledSearchResultContainer>
   );
 }

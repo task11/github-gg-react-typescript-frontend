@@ -7,3 +7,7 @@ export const StyledSearchResultContainer = styled.div`
   align-items: center;
   gap: 20px;
 `;
+
+export const StyledTarget = styled.div`
+  height: 1px;
+`;
