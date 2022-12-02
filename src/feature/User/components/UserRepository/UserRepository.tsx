@@ -1,13 +1,19 @@
 import Icons from '../../../../components/Icons';
 import UserRepositoryTopicList from '../UserRepositoryTopicList/UserRepositoryTopicList';
 
+import { RepositoryProps } from '../../../../types';
+
 import { StyledDropdown, StyledUserRepository } from './UserRepository.style';
 
-export default function UserRepository() {
+interface Props {
+  repository: RepositoryProps;
+}
+
+export default function UserRepository({ repository }: Props) {
   return (
     <StyledUserRepository>
-      <strong>algorithm-javascript-legacy</strong>
-      <UserRepositoryTopicList />
+      <strong>{repository.name}</strong>
+      <UserRepositoryTopicList topics={repository.topics} />
       <StyledDropdown>
         <Icons.OutlineArrowDown />
       </StyledDropdown>
