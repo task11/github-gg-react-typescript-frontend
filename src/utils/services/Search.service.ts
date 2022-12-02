@@ -4,9 +4,14 @@ import { SearchUserResponseProps } from '../../types';
 
 class SearchService {
   getSearchFormList(query: string) {
-    return server.get<SearchUserResponseProps>(
-      `/search/users?q=${query}&per_page=5&page=1`,
-    );
+    return server.get<SearchUserResponseProps>(`/search/users`, {
+      params: {
+        q: query,
+        per_page: 5,
+        order: 'desc',
+        page: 1,
+      },
+    });
   }
 
   getSearchResultList(query: string, page: number) {
