@@ -44,10 +44,10 @@ export default function SearchResultContainer() {
   });
 
   const onSearchQuery = (queryData: QueryDataProps) => {
-    const { id } = queryData;
+    const { username } = queryData;
 
     RecentService.set(queryData);
-    navigate(`/user/${id}`);
+    navigate(`/user/${username}`);
   };
 
   if (isLoading || !data) {
