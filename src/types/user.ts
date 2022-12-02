@@ -32,16 +32,3 @@ export interface UserProps {
   created_at: string;
   updated_at: string;
 }
-
-export interface UserInfoProps {
-  login: string;
-  avatar_url: string;
-  name?: string;
-  bio?: string;
-}
-
-export interface UserContentsProps {
-  blog?: string;
-  email?: string | null;
-  company?: string | null;
-}

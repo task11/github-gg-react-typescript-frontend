@@ -36,7 +36,7 @@ export const lightTheme = {
   fontColor: {
     default: '#333333',
     header: '#ECECEC',
-    accent: '#30336b',
+    accent: '#6060f9',
     hover: '#3F4E4F',
   },
   borderColor: {

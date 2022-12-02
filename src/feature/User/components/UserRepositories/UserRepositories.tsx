@@ -2,26 +2,18 @@ import { RepositoriesProps } from '../../../../types';
 
 import UserRepository from '../UserRepository/UserRepository';
 
-import {
-  StyledTarget,
-  StyledUserRepositories,
-  StyledUserRepositoriesHeader,
-} from './UserRepositories.style';
+import { StyledTarget, StyledUserRepositories } from './UserRepositories.style';
 
-// interface Props {
-//   repositories: RepositoriesProps;
-// }
+interface Props {
+  repositories: RepositoriesProps;
+}
 
-export default function UserRepositories() {
+export default function UserRepositories({ repositories }: Props) {
   return (
     <StyledUserRepositories>
-      <StyledUserRepositoriesHeader>
-        42 Repositories
-      </StyledUserRepositoriesHeader>
-      <UserRepository />
-      <UserRepository />
-      <UserRepository />
-      <UserRepository />
+      {repositories.map((repository) => (
+        <UserRepository key={repository.id} repository={repository} />
+      ))}
       <StyledTarget />
     </StyledUserRepositories>
   );

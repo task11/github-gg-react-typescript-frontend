@@ -52,7 +52,7 @@ export interface RepositoryProps {
   mirror_url: string | null;
   hooks_url: string;
   svn_url: string;
-  homepage: string;
+  homepage: string | null;
   language: string | null;
   forks_count: number;
   stargazers_count: number;
@@ -61,7 +61,7 @@ export interface RepositoryProps {
   default_branch: string;
   open_issues_count: number;
   is_template: boolean;
-  topics: string[];
+  topics: TopicsProps;
   has_issues: boolean;
   has_projects: boolean;
   has_wiki: boolean;
@@ -72,7 +72,6 @@ export interface RepositoryProps {
   disabled: boolean;
   visibility: string;
   pushed_at: string;
-  license: string | null;
   created_at: string;
   updated_at: string;
   permissions: Permissions;
@@ -104,3 +103,5 @@ export interface Permissions {
   push: boolean;
   pull: boolean;
 }
+
+export type TopicsProps = Array<string>;

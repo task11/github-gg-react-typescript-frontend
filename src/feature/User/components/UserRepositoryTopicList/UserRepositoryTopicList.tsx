@@ -1,14 +1,19 @@
+import { TopicsProps } from '../../../../types';
 import {
   StyledRepositoryTopic,
   StyledRepositoryTopicList,
 } from './UserRepositoryTopicList.style';
 
-export default function UserRepositoryTopicList() {
+interface Props {
+  topics: TopicsProps;
+}
+
+export default function UserRepositoryTopicList({ topics }: Props) {
   return (
     <StyledRepositoryTopicList>
-      <StyledRepositoryTopic>typescript</StyledRepositoryTopic>
-      <StyledRepositoryTopic>react</StyledRepositoryTopic>
-      <StyledRepositoryTopic>next</StyledRepositoryTopic>
+      {topics.map((topic, idx) => (
+        <StyledRepositoryTopic key={idx}>{topic}</StyledRepositoryTopic>
+      ))}
     </StyledRepositoryTopicList>
   );
 }
