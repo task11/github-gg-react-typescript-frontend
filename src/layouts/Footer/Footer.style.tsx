@@ -49,6 +49,6 @@ export const StyledFooterLink = styled.a`
   }
 
   &:hover {
-    color: ${(props) => props.theme.fontColor.hover};
+    color: ${(props) => props.theme.fontColor.accent};
   }
 `;
