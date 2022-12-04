@@ -1,38 +1,53 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useMemo, useState } from 'react';
 
-import server from '../../../lib/axios';
+import { useParams } from 'react-router-dom';
+import { useIntersectionObserver } from '../../../utils/hooks';
+
+import useUserInfo from '../api/useUser';
+import useUserRepositories from '../api/useUserRepositories';
 
 import UserInfo from './UserInfo/UserInfo';
 import UserRepositories from './UserRepositories/UserRepositories';
 
-import { StyledUserContainer } from './UserContainer.style';
-import UserService from '../../../utils/services/User.service';
+import { StyledTarget, StyledUserContainer } from './UserContainer.style';
 
 export default function UserContainer() {
   const { username } = useParams();
-  const [repositories, setRepositories] = useState([]);
-  const [user, setUser] = useState();
+  const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    const getUserRepositories = async () => {
-      const result = await UserService.getUserRepositories(username as string);
-      setRepositories(result.data);
-    };
+  const { data: user, isLoading: loadingUser } = useUserInfo(
+    username as string,
+  );
 
-    const getUser = async () => {
-      const result = await UserService.getUser(username as string);
-      setUser(result.data);
-    };
+  const {
+    data,
+    isLoading: loadingUserRepositories,
+    hasNextPage,
+    isFetching,
+    fetchNextPage,
+  } = useUserRepositories(username as string, page);
 
-    getUserRepositories();
-    getUser();
-  }, []);
+  const repositories = useMemo(
+    () => (data ? data.pages.flatMap(({ data: list }) => list) : []),
+    [data],
+  );
+
+  const ref = useIntersectionObserver(async (entry, observer) => {
+    observer.unobserve(entry.target);
+
+    if (hasNextPage && !isFetching) {
+      setPage((currentState) => currentState + 1);
+      fetchNextPage();
+    }
+  });
+
+  if (loadingUser || loadingUserRepositories) return <>loading...</>;
 
   return (
     <StyledUserContainer>
       <UserInfo user={user} />
       <UserRepositories repositories={repositories} />
+      <StyledTarget ref={ref} />
     </StyledUserContainer>
   );
 }

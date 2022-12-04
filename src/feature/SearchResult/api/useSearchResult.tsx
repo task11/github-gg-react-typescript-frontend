@@ -1,12 +1,11 @@
 import { QueryFunctionContext, useInfiniteQuery } from '@tanstack/react-query';
-
-import { userCache } from '../../../utils/models/userCache';
+import { searchCache } from '../../../utils/models';
 
 import SearchService from '../../../utils/services/Search.service';
 
-export default function useFetchSearchResult(query: string, page: number) {
+export default function useSearchResult(query: string, page: number) {
   return useInfiniteQuery(
-    userCache.getUsersByQueryPagenation(query),
+    searchCache.getUsersBySearchResult(query),
     ({ pageParam = page }: QueryFunctionContext) =>
       SearchService.getSearchResultList(query, pageParam),
     {

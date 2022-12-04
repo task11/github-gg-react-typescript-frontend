@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import useFetchSearchResult from '../api/useSearchResult';
+import useSearchResult from '../api/useSearchResult';
 import { useIntersectionObserver, useQueryParams } from '../../../utils/hooks';
 
 import RecentService from '../../../utils/services/Recent.service';
@@ -27,7 +27,7 @@ export default function SearchResultContainer() {
   }, [queryString]);
 
   const { data, isLoading, hasNextPage, isFetching, fetchNextPage } =
-    useFetchSearchResult(queryString as string, page);
+    useSearchResult(queryString as string, page);
 
   const items = useMemo(
     () => (data ? data.pages.flatMap(({ data: list }) => list.items) : []),

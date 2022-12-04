@@ -1,6 +1,10 @@
-const USER_KEY = 'getUsers';
+const USER_KEY = 'getUser';
 
 export const userCache = {
-  getUsersByQuery: (query: string, page: number) => [USER_KEY, { query, page }],
-  getUsersByQueryPagenation: (query: string) => [USER_KEY, 'list', { query }],
+  getUser: (username: string) => [USER_KEY, 'user', { username }],
+  getUserRepositories: (username: string) => [
+    USER_KEY,
+    'repositories',
+    { username },
+  ],
 };

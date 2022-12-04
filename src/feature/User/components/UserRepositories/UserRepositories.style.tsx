@@ -6,7 +6,3 @@ export const StyledUserRepositories = styled.div`
   flex-direction: column;
   gap: 10px;
 `;
-
-export const StyledTarget = styled.div`
-  height: 1px;
-`;
