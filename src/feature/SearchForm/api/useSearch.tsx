@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { userCache } from '../../../utils/models/userCache';
+import { searchCache } from '../../../utils/models';
 
 import SearchService from '../../../utils/services/Search.service';
 
@@ -9,7 +9,7 @@ export default function useSearch(query: string) {
     return (await SearchService.getSearchFormList(query)).data;
   };
 
-  return useQuery(userCache.getUsersByQuery(query, 1), getUsersByQuery, {
+  return useQuery(searchCache.getUsersBySearchForm(query), getUsersByQuery, {
     keepPreviousData: true,
     refetchOnWindowFocus: true,
     staleTime: 60000,
