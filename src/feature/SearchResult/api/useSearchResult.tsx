@@ -3,7 +3,7 @@ import { searchCache } from '../../../utils/models';
 
 import SearchService from '../../../utils/services/Search.service';
 
-export default function useFetchSearchResult(query: string, page: number) {
+export default function useSearchResult(query: string, page: number) {
   return useInfiniteQuery(
     searchCache.getUsersBySearchResult(query),
     ({ pageParam = page }: QueryFunctionContext) =>
