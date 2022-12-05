@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 
+export const StyledUserRepositoryTopicList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .label {
+    font-size: 12px;
+    font-weight: 300;
+  }
+`;
+
 export const StyledRepositoryTopicList = styled.div`
   display: flex;
   flex-wrap: wrap;

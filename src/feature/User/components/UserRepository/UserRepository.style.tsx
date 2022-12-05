@@ -8,7 +8,7 @@ export const StyledUserRepository = styled.div`
   width: 100%;
   padding: 12px;
   gap: 12px;
-  min-height: 56px;
+  min-height: 72px;
   background-color: ${(props) => props.theme.bgColor.card};
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border-radius: 8px;
@@ -17,6 +17,17 @@ export const StyledUserRepository = styled.div`
 
   &:hover {
     background-color: ${(props) => props.theme.bgColor.cardHover};
+  }
+`;
+
+export const StyledUserRepositoryTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .label {
+    font-size: 12px;
+    font-weight: 300;
   }
 
   strong {
@@ -34,7 +45,7 @@ export const StyledDropdown = styled.button`
   border: none;
   cursor: pointer;
 
-  svg path {
-    fill: ${(props) => props.theme.fontColor.default};
+  svg {
+    color: ${(props) => props.theme.fontColor.default};
   }
 `;
