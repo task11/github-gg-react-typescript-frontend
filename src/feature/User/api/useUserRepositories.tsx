@@ -4,17 +4,18 @@ import { userCache } from '../../../utils/models';
 
 import UserService from '../../../utils/services/User.service';
 
-export default function useUserRepositories(username: string, page: number) {
+export default function useUserRepositories(username: string) {
   return useInfiniteQuery(
     userCache.getUserRepositories(username),
-    ({ pageParam = page }: QueryFunctionContext) =>
+    ({ pageParam = 1 }: QueryFunctionContext) =>
       UserService.getUserRepositories(username, pageParam),
     {
       keepPreviousData: true,
       refetchOnWindowFocus: true,
       staleTime: 60000,
-      enabled: !!username && !!page,
-      getNextPageParam: ({ data }) => (!data.length ? undefined : page + 1),
+      enabled: !!username,
+      getNextPageParam: (lastPage, allPages) =>
+        !lastPage.data.length ? undefined : allPages.length + 1,
     },
   );
 }
