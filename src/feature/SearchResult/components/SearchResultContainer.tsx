@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import useSearchResult from '../api/useSearchResult';
@@ -18,7 +18,6 @@ import { QueryDataProps } from '../../../types/queryData';
 export default function SearchResultContainer() {
   const { queryString } = useQueryParams('q');
   const navigate = useNavigate();
-  const [page, setPage] = useState(1);
 
   useEffect(() => {
     if (!queryString) {
@@ -27,7 +26,7 @@ export default function SearchResultContainer() {
   }, [queryString]);
 
   const { data, isLoading, hasNextPage, isFetching, fetchNextPage } =
-    useSearchResult(queryString as string, page);
+    useSearchResult(queryString as string);
 
   const items = useMemo(
     () => (data ? data.pages.flatMap(({ data: list }) => list.items) : []),
@@ -38,7 +37,6 @@ export default function SearchResultContainer() {
     observer.unobserve(entry.target);
 
     if (hasNextPage && !isFetching) {
-      setPage((currentState) => currentState + 1);
       fetchNextPage();
     }
   });

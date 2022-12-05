@@ -3,18 +3,18 @@ import { searchCache } from '../../../utils/models';
 
 import SearchService from '../../../utils/services/Search.service';
 
-export default function useSearchResult(query: string, page: number) {
+export default function useSearchResult(query: string) {
   return useInfiniteQuery(
     searchCache.getUsersBySearchResult(query),
-    ({ pageParam = page }: QueryFunctionContext) =>
+    ({ pageParam = 1 }: QueryFunctionContext) =>
       SearchService.getSearchResultList(query, pageParam),
     {
       keepPreviousData: true,
       refetchOnWindowFocus: true,
       staleTime: 60000,
-      enabled: !!query && !!page,
-      getNextPageParam: ({ data: { items } }) =>
-        !items.length ? undefined : page + 1,
+      enabled: !!query,
+      getNextPageParam: (lastPage, allPages) =>
+        !lastPage.data.items.length ? undefined : allPages.length + 1,
     },
   );
 }
