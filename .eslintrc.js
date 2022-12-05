@@ -51,5 +51,6 @@ module.exports = {
       2,
       { labelAttributes: ['htmlFor'] },
     ],
+    'eslint/no-return-await ': 'off',
   },
 };
