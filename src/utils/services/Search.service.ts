@@ -8,7 +8,6 @@ class SearchService {
       params: {
         q: query,
         per_page: 5,
-        order: 'desc',
         page: 1,
       },
     });
@@ -19,7 +18,6 @@ class SearchService {
       params: {
         q: query,
         per_page: 8,
-        order: 'desc',
         page,
       },
     });

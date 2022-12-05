@@ -1,29 +1,38 @@
-import { useState } from 'react';
+import { useToggle } from '../../../../utils/hooks';
+
 import Icons from '../../../../components/Icons';
+
+import UserRepositoryChart from '../UserRepositoryChart/UserRepositoryChart';
 import UserRepositoryTopicList from '../UserRepositoryTopicList/UserRepositoryTopicList';
 
 import { RepositoryProps } from '../../../../types';
 
-import { StyledDropdown, StyledUserRepository } from './UserRepository.style';
-
-import UserRepositoryCart from '../UserRepositoryCart/UserRepositoryCart';
+import {
+  StyledDropdown,
+  StyledUserRepository,
+  StyledUserRepositoryTitle,
+} from './UserRepository.style';
 
 interface Props {
   repository: RepositoryProps;
 }
 
 export default function UserRepository({ repository }: Props) {
-  const [toggle, setToggle] = useState(false);
+  const { toggleState, handleToggle } = useToggle();
+
   return (
     <>
-      <StyledUserRepository onClick={() => setToggle((curr) => !curr)}>
-        <strong>{repository.name}</strong>
+      <StyledUserRepository onClick={handleToggle}>
+        <StyledUserRepositoryTitle>
+          <span className="label">Repository</span>
+          <strong>{repository.name}</strong>
+        </StyledUserRepositoryTitle>
         <UserRepositoryTopicList topics={repository.topics} />
         <StyledDropdown>
-          <Icons.OutlineArrowDown />
+          {toggleState ? <Icons.OutlineClose /> : <Icons.OutlineOpen />}
         </StyledDropdown>
       </StyledUserRepository>
-      {toggle && <UserRepositoryCart />}
+      {toggleState && <UserRepositoryChart repository={repository} />}
     </>
   );
 }

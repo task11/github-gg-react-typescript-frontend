@@ -1,6 +1,6 @@
-import { useMemo, useState } from 'react';
-
+import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { useIntersectionObserver } from '../../../utils/hooks';
 
 import useUserInfo from '../api/useUser';
@@ -13,7 +13,6 @@ import { StyledTarget, StyledUserContainer } from './UserContainer.style';
 
 export default function UserContainer() {
   const { username } = useParams();
-  const [page, setPage] = useState(1);
 
   const { data: user, isLoading: loadingUser } = useUserInfo(
     username as string,
@@ -25,7 +24,7 @@ export default function UserContainer() {
     hasNextPage,
     isFetching,
     fetchNextPage,
-  } = useUserRepositories(username as string, page);
+  } = useUserRepositories(username as string);
 
   const repositories = useMemo(
     () => (data ? data.pages.flatMap(({ data: list }) => list) : []),
@@ -36,7 +35,6 @@ export default function UserContainer() {
     observer.unobserve(entry.target);
 
     if (hasNextPage && !isFetching) {
-      setPage((currentState) => currentState + 1);
       fetchNextPage();
     }
   });

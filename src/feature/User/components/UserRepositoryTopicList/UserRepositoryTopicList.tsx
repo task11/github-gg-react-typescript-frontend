@@ -2,6 +2,7 @@ import { TopicsProps } from '../../../../types';
 import {
   StyledRepositoryTopic,
   StyledRepositoryTopicList,
+  StyledUserRepositoryTopicList,
 } from './UserRepositoryTopicList.style';
 
 interface Props {
@@ -9,11 +10,16 @@ interface Props {
 }
 
 export default function UserRepositoryTopicList({ topics }: Props) {
+  if (!topics.length) return <></>;
+
   return (
-    <StyledRepositoryTopicList>
-      {topics.map((topic, idx) => (
-        <StyledRepositoryTopic key={idx}>{topic}</StyledRepositoryTopic>
-      ))}
-    </StyledRepositoryTopicList>
+    <StyledUserRepositoryTopicList>
+      <span className="label">Topics</span>
+      <StyledRepositoryTopicList>
+        {topics.map((topic, idx) => (
+          <StyledRepositoryTopic key={idx}>{topic}</StyledRepositoryTopic>
+        ))}
+      </StyledRepositoryTopicList>
+    </StyledUserRepositoryTopicList>
   );
 }
