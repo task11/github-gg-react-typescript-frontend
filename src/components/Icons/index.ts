@@ -8,7 +8,8 @@ import Bookmark from './Bookmark';
 import SearchLogo from './SearchLogo';
 import Branch from './Branch';
 import Search from './Search';
-import OutlineArrowDown from './OutlineArrowDown';
+import OutlineOpen from './OutlineOpen';
+import OutlineClose from './OutlineClose';
 
 export default {
   ArrowDown,
@@ -21,5 +22,6 @@ export default {
   SearchLogo,
   Branch,
   Search,
-  OutlineArrowDown,
+  OutlineOpen,
+  OutlineClose,
 };
