@@ -11,27 +11,28 @@ import {
   StyledUserRepository,
   StyledUserRepositoryTitle,
 } from './UserRepository.style';
+import { useToggle } from '../../../../utils/hooks';
 
 interface Props {
   repository: RepositoryProps;
 }
 
 export default function UserRepository({ repository }: Props) {
-  const [toggle, setToggle] = useState(false);
+  const { toggleState, handleToggle } = useToggle();
 
   return (
     <>
-      <StyledUserRepository onClick={() => setToggle((curr) => !curr)}>
+      <StyledUserRepository onClick={handleToggle}>
         <StyledUserRepositoryTitle>
           <span className="label">Repository</span>
           <strong>{repository.name}</strong>
         </StyledUserRepositoryTitle>
         <UserRepositoryTopicList topics={repository.topics} />
         <StyledDropdown>
-          {toggle ? <Icons.OutlineClose /> : <Icons.OutlineOpen />}
+          {toggleState ? <Icons.OutlineClose /> : <Icons.OutlineOpen />}
         </StyledDropdown>
       </StyledUserRepository>
-      {toggle && <UserRepositoryChart repository={repository} />}
+      {toggleState && <UserRepositoryChart repository={repository} />}
     </>
   );
 }
