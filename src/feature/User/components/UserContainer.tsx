@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
-
 import { useParams } from 'react-router-dom';
+
 import { useIntersectionObserver } from '../../../utils/hooks';
 
 import useUserInfo from '../api/useUser';

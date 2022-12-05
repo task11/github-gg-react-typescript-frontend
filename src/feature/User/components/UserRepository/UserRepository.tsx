@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useToggle } from '../../../../utils/hooks';
 
 import Icons from '../../../../components/Icons';
+
 import UserRepositoryChart from '../UserRepositoryChart/UserRepositoryChart';
 import UserRepositoryTopicList from '../UserRepositoryTopicList/UserRepositoryTopicList';
 
@@ -11,7 +12,6 @@ import {
   StyledUserRepository,
   StyledUserRepositoryTitle,
 } from './UserRepository.style';
-import { useToggle } from '../../../../utils/hooks';
 
 interface Props {
   repository: RepositoryProps;
