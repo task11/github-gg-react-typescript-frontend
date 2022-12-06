@@ -2,11 +2,11 @@ import { QueryDataProps, QueryDataPropsList } from '../../types';
 
 import LocalService from './Local.service';
 
-class RecentQueryService {
-  maxLength = 3;
+class BookmarkService {
+  maxLength = 20;
 
   get(): QueryDataPropsList | null {
-    const data: QueryDataPropsList | null = LocalService.get('recentQuery');
+    const data: QueryDataPropsList | null = LocalService.get('bookmark');
     if (!data) {
       return null;
     }
@@ -15,11 +15,10 @@ class RecentQueryService {
   }
 
   set(data: QueryDataProps) {
-    const currentData: QueryDataPropsList | null =
-      LocalService.get('recentQuery');
+    const currentData: QueryDataPropsList | null = LocalService.get('bookmark');
 
     if (!currentData) {
-      LocalService.set('recentQuery', [data]);
+      LocalService.set('bookmark', [data]);
       return;
     }
 
@@ -28,7 +27,7 @@ class RecentQueryService {
     this.lengthCheck(dataWithoutDuplicate);
     this.arrayResize(dataWithoutDuplicate);
 
-    LocalService.set('recentQuery', [...dataWithoutDuplicate, data]);
+    LocalService.set('bookmark', [...dataWithoutDuplicate, data]);
   }
 
   removeDuplicate(currentData: QueryDataPropsList, data: QueryDataProps) {
@@ -48,4 +47,4 @@ class RecentQueryService {
   }
 }
 
-export default new RecentQueryService();
+export default new BookmarkService();
