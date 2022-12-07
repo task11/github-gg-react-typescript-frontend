@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import BookmarkService from '../../../utils/services/Bookmark.service';
 
 export default function useBookmark() {
