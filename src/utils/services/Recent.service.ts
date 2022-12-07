@@ -3,6 +3,8 @@ import { QueryDataProps, QueryDataPropsList } from '../../types';
 import LocalService from './Local.service';
 
 class RecentQueryService {
+  maxLength = 3;
+
   get(): QueryDataPropsList | null {
     const data: QueryDataPropsList | null = LocalService.get('recentQuery');
     if (!data) {
@@ -34,13 +36,13 @@ class RecentQueryService {
   }
 
   lengthCheck(data: QueryDataPropsList) {
-    if (data.length > 3) {
+    if (data.length > this.maxLength) {
       data.shift();
     }
   }
 
   arrayResize(data: QueryDataPropsList) {
-    if (data.length > 3) {
+    if (data.length > this.maxLength) {
       data.shift();
     }
   }

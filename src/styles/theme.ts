@@ -6,6 +6,7 @@ export const darkTheme = {
     card: '#333333',
     logo: '#ECECEC',
     cardHover: '#595959',
+    cancel: '#2c5641',
   },
   fontColor: {
     default: '#ECECEC',
@@ -32,6 +33,7 @@ export const lightTheme = {
     card: '#ECECEC',
     logo: '#3F4E4F',
     cardHover: '#f9f9f9',
+    cancel: '#52a37b',
   },
   fontColor: {
     default: '#333333',

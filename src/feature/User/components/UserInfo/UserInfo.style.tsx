@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const StyledUserInfoWrapper = styled.div`
+  width: 100%;
+  position: relative;
+`;
+
 export const StyledUserInfo = styled.div`
   display: flex;
   width: 100%;

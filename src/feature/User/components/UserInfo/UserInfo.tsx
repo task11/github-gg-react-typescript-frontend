@@ -1,25 +1,30 @@
 import Avatar from '../../../../components/Avatar/Avatar';
+import UserBookmarkButton from '../UserBookmarkButton/UserBookmarkButton';
 
-import { UserProps } from '../../../../types';
+import { QueryDataProps, UserProps } from '../../../../types';
 
 import {
+  StyledUserInfoWrapper,
   StyledUserContent,
   StyledUserContents,
   StyledUserInfo,
   StyledUserName,
   StyledUserRepositoryInfo,
 } from './UserInfo.style';
+import useToggleBookmark from '../../hooks/useToggleBookmark';
 
 interface Props {
   user: UserProps | undefined;
+  handleBookmark: (data: QueryDataProps) => void;
 }
 
-export default function UserInfo({ user }: Props) {
+export default function UserInfo({ user, handleBookmark }: Props) {
   if (!user) return <>loading...</>;
-
+  const { isBookmark, toggleBookmark } = useToggleBookmark(user.id);
   const {
     avatar_url: avatarUrl,
-    login: userId,
+    login: username,
+    id,
     name,
     bio,
     blog,
@@ -28,12 +33,14 @@ export default function UserInfo({ user }: Props) {
     public_repos: publicRepos,
   } = user;
 
+  const bookmarkProps = { id, avatarUrl, username };
+
   return (
-    <>
+    <StyledUserInfoWrapper>
       <StyledUserInfo>
         <Avatar src={avatarUrl} size="lg" />
         <StyledUserName>
-          <strong>{userId}</strong>
+          <strong>{username}</strong>
           <span className="username">{name}</span>
           <span className="bio">{bio}</span>
         </StyledUserName>
@@ -75,6 +82,12 @@ export default function UserInfo({ user }: Props) {
           {publicRepos} Repositories
         </StyledUserRepositoryInfo>
       </StyledUserContents>
-    </>
+      <UserBookmarkButton
+        bookmarkProps={bookmarkProps}
+        handleBookmark={handleBookmark}
+        toggleBookmark={toggleBookmark}
+        isBookmark={isBookmark}
+      />
+    </StyledUserInfoWrapper>
   );
 }

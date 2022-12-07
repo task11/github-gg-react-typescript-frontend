@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage/HomePage';
 import SearchPage from './pages/SearchPage/SearchPage';
 import NotFountPage from './pages/NotFoundPage/NotFountPage';
 import UserPage from './pages/UserPage/UserPage';
+import BookmarkPage from './pages/BookmarkPage/BookmarkPage';
 
 export default function Router() {
   return (
@@ -15,6 +16,7 @@ export default function Router() {
           <Route path="/" element={<HomePage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/user/:username" element={<UserPage />} />
+          <Route path="/bookmark" element={<BookmarkPage />} />
         </Route>
         <Route path="*" element={<NotFountPage />} />
       </Routes>
