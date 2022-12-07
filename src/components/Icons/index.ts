@@ -10,6 +10,8 @@ import Branch from './Branch';
 import Search from './Search';
 import OutlineOpen from './OutlineOpen';
 import OutlineClose from './OutlineClose';
+import OutlineBookmark from './OutlineBookmark';
+import FilledBookmark from './FilledBookmark';
 
 export default {
   ArrowDown,
@@ -24,4 +26,6 @@ export default {
   Search,
   OutlineOpen,
   OutlineClose,
+  OutlineBookmark,
+  FilledBookmark,
 };
