@@ -1,10 +1,14 @@
 import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { useIntersectionObserver } from '../../../utils/hooks';
-
 import useUserInfo from '../api/useUser';
 import useUserRepositories from '../api/useUserRepositories';
+
+import { useIntersectionObserver } from '../../../utils/hooks';
+
+import BookmarkService from '../../../utils/services/Bookmark.service';
+
+import { QueryDataProps } from '../../../types';
 
 import UserInfo from './UserInfo/UserInfo';
 import UserRepositories from './UserRepositories/UserRepositories';
@@ -39,11 +43,15 @@ export default function UserContainer() {
     }
   });
 
+  const handleBookmark = (queryData: QueryDataProps) => {
+    BookmarkService.set(queryData);
+  };
+
   if (loadingUser || loadingUserRepositories) return <>loading...</>;
 
   return (
     <StyledUserContainer>
-      <UserInfo user={user} />
+      <UserInfo user={user} handleBookmark={handleBookmark} />
       <UserRepositories repositories={repositories} />
       <StyledTarget ref={ref} />
     </StyledUserContainer>
