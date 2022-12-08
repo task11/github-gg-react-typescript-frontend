@@ -7,6 +7,7 @@ import { StyledSearchResult } from './SearchResult.style';
 
 interface Props {
   isSearching: boolean;
+  isError: boolean;
   searchQuery: string;
   searchResult: SearchUserProps[] | undefined;
   onSearchQuery: (queryData: QueryDataProps) => void;
@@ -15,6 +16,7 @@ interface Props {
 
 export default function SearchResult({
   isSearching,
+  isError,
   searchQuery,
   searchResult,
   onSearchQuery,
@@ -29,6 +31,7 @@ export default function SearchResult({
       <SearchResultList
         searchQuery={searchQuery}
         searchResult={searchResult}
+        isError={isError}
         onSearchQuery={onSearchQuery}
       />
       <SearchRecentList

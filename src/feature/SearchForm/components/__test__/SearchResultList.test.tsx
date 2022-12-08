@@ -32,11 +32,12 @@ const result = [
 describe('SearchResultList', () => {
   const onSearchQuery = jest.fn();
 
-  const renderer = (searchResult: SearchUserProps[] = []) => {
+  const renderer = (searchResult: SearchUserProps[] = [], isError = false) => {
     const { getByText } = render(
       <SearchResultList
         searchQuery="task11"
         searchResult={searchResult}
+        isError={isError}
         onSearchQuery={onSearchQuery}
       />,
     );

@@ -12,8 +12,10 @@ import SearchResultCardList from './SearchResultCardList/SearchResultCardList';
 import SearchResultHeader from './SearchResultHeader/SearchResultHeader';
 import SearchResultSkeleton from './SearchResultSkeleton/SearchResultSkeleton';
 import LoadingSpinner from '../../../components/LoadingSpinner/LoadingSpinner';
+import Error from '../../../components/Error/Error';
 
 import {
+  StyledErrorWrapper,
   StyledSearchResultContainer,
   StyledTarget,
 } from './SearchResultContainer.style';
@@ -28,7 +30,7 @@ export default function SearchResultContainer() {
     }
   }, [queryString]);
 
-  const { data, isLoading, hasNextPage, isFetching, fetchNextPage } =
+  const { data, isLoading, hasNextPage, isFetching, fetchNextPage, isError } =
     useSearchResult(queryString as string);
 
   const items = useMemo(
@@ -55,14 +57,21 @@ export default function SearchResultContainer() {
     return <SearchResultSkeleton />;
   }
 
+  const totalCount = data.pages[0].data.total_count;
+
   return (
     <StyledSearchResultContainer>
-      <SearchResultHeader totalCount={data.pages[0].data.total_count} />
+      <SearchResultHeader totalCount={totalCount} />
       <SearchResultCardList
         searchResult={items}
         onSearchQuery={onSearchQuery}
       />
       {isFetching ? <LoadingSpinner /> : <StyledTarget ref={ref} />}
+      {isError && (
+        <StyledErrorWrapper>
+          <Error />
+        </StyledErrorWrapper>
+      )}
     </StyledSearchResultContainer>
   );
 }

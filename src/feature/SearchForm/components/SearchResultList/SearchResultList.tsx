@@ -1,5 +1,6 @@
 import Icons from '../../../../components/Icons';
 import SearchResultItem from './SearchResultItem';
+import Error from '../../../../components/Error/Error';
 
 import { QueryDataProps, SearchUserProps } from '../../../../types';
 
@@ -14,14 +15,24 @@ import {
 interface Props {
   searchQuery: string;
   searchResult: SearchUserProps[] | undefined;
+  isError: boolean;
   onSearchQuery: (queryData: QueryDataProps) => void;
 }
 
 export default function SearchResultList({
   searchQuery,
   searchResult,
+  isError,
   onSearchQuery,
 }: Props) {
+  if (isError) {
+    return (
+      <StyledWithoutResult>
+        <Error />
+      </StyledWithoutResult>
+    );
+  }
+
   if (!searchResult?.length || !searchQuery.length) {
     return (
       <StyledWithoutResult>
@@ -29,6 +40,7 @@ export default function SearchResultList({
       </StyledWithoutResult>
     );
   }
+
   return (
     <StyledResultWrapper>
       {searchQuery.length > 0 && (
