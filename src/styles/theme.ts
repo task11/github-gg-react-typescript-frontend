@@ -17,6 +17,12 @@ export const darkTheme = {
   borderColor: {
     default: '#121212',
   },
+  skeletonColor: {
+    default: '#82828200',
+    start: '#82828233',
+    end: '#82828280',
+    background: '#4A4A4D',
+  },
   close: '#333333',
   inputColor: 'whitesmoke',
   buttonColor: '#333333',
@@ -44,7 +50,12 @@ export const lightTheme = {
   borderColor: {
     default: '#121212',
   },
-
+  skeletonColor: {
+    default: '#ffffff00',
+    start: '#ffffff33',
+    end: '#ffffff80',
+    background: '#e6e1da',
+  },
   close: 'black',
   inputColor: 'dark',
   buttonColor: '#2C3639',
