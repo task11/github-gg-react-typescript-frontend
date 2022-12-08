@@ -14,15 +14,22 @@ import UserInfo from './UserInfo/UserInfo';
 import UserRepositories from './UserRepositories/UserRepositories';
 import UserSkeleton from './UserSkeleton/UserSkeleton';
 import LoadingSpinner from '../../../components/LoadingSpinner/LoadingSpinner';
+import Error from '../../../components/Error/Error';
 
-import { StyledTarget, StyledUserContainer } from './UserContainer.style';
+import {
+  StyledErrorWrapper,
+  StyledTarget,
+  StyledUserContainer,
+} from './UserContainer.style';
 
 export default function UserContainer() {
   const { username } = useParams();
 
-  const { data: user, isLoading: loadingUser } = useUserInfo(
-    username as string,
-  );
+  const {
+    data: user,
+    isLoading: loadingUser,
+    isError: isErrorUserFetch,
+  } = useUserInfo(username as string);
 
   const {
     data,
@@ -30,6 +37,7 @@ export default function UserContainer() {
     hasNextPage,
     isFetching,
     fetchNextPage,
+    isError: isErrorRepositoriesFetch,
   } = useUserRepositories(username as string);
 
   const repositories = useMemo(
@@ -49,7 +57,17 @@ export default function UserContainer() {
     BookmarkService.set(queryData);
   };
 
-  if (loadingUser || loadingUserRepositories) return <UserSkeleton />;
+  if (loadingUser || loadingUserRepositories) {
+    return <UserSkeleton />;
+  }
+
+  if (isErrorUserFetch || isErrorRepositoriesFetch || !user || !repositories) {
+    return (
+      <StyledErrorWrapper>
+        <Error />
+      </StyledErrorWrapper>
+    );
+  }
 
   return (
     <StyledUserContainer>

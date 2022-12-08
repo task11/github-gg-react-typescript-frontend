@@ -35,10 +35,12 @@ describe('SearchResult', () => {
 
   const renderer = (
     searchResult: SearchUserProps[] = [],
+    isError = false,
     isSearching = true,
   ) => {
     const { getByText } = render(
       <SearchResult
+        isError={isError}
         isSearching={isSearching}
         searchQuery="task11"
         searchResult={searchResult}

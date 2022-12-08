@@ -10,6 +10,7 @@ import { RepositoryProps } from '../../../../types';
 import { themeAtom } from '../../../../store';
 
 import UserRepositoryChartSkeleton from '../UserSkeleton/UserRepositoryChartSkeleton';
+import Error from '../../../../components/Error/Error';
 
 import {
   StyledRepositoryContent,
@@ -18,6 +19,7 @@ import {
   StyledChartWrapper,
   StyledRepositoryLink,
   StyledRepositoryLinkWrapper,
+  StyledErrorWrapper,
 } from './UserRepositoryChart.style';
 
 interface Props {
@@ -26,7 +28,7 @@ interface Props {
 
 export default function UserRepositoryChart({ repository }: Props) {
   const mode = useRecoilValue(themeAtom);
-  const { data, isLoading } = useUserRepository(
+  const { data, isLoading, isError } = useUserRepository(
     repository.owner.login,
     repository.name,
   );
@@ -37,6 +39,14 @@ export default function UserRepositoryChart({ repository }: Props) {
   );
 
   if (isLoading) return <UserRepositoryChartSkeleton />;
+
+  if (isError) {
+    return (
+      <StyledErrorWrapper>
+        <Error />
+      </StyledErrorWrapper>
+    );
+  }
 
   return (
     <StyledUserRepositoryChart>

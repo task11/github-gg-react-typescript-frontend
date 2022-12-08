@@ -15,12 +15,11 @@ import {
 } from './UserInfo.style';
 
 interface Props {
-  user: UserProps | undefined;
+  user: UserProps;
   handleBookmark: (data: QueryDataProps) => void;
 }
 
 export default function UserInfo({ user, handleBookmark }: Props) {
-  if (!user) return <>loading...</>;
   const { isBookmark, toggleBookmark } = useToggleBookmark(user.id);
   const {
     avatar_url: avatarUrl,

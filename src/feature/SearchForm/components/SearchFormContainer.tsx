@@ -23,7 +23,7 @@ export default function SearchFormContainer() {
     useHandleSearch(searchQuery);
 
   const debounceSearchQuery = useDebounce(searchQuery, 500);
-  const { data } = useSearch(debounceSearchQuery);
+  const { data, isError } = useSearch(debounceSearchQuery);
 
   return (
     <StyledSearchFormContainer>
@@ -38,6 +38,7 @@ export default function SearchFormContainer() {
       />
       <SearchResult
         isSearching={isSearching}
+        isError={isError}
         searchQuery={searchQuery}
         searchResult={data?.items}
         onSearchQuery={onSearchQuery}

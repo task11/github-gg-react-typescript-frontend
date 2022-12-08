@@ -74,3 +74,14 @@ export const StyledRepositoryLink = styled.a`
     color: ${(props) => props.theme.fontColor.accent};
   }
 `;
+
+export const StyledErrorWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-height: 500px;
+  background-color: ${(props) => props.theme.bgColor.card};
+  padding: 16px;
+  border-radius: 8px;
+`;
