@@ -24,7 +24,7 @@ export const StyledLogoWrapper = styled.strong`
 `;
 
 export const StyledFooterItem = styled.div`
-  flex-basis: 100px;
+  flex-basis: 80px;
 
   strong {
     font-weight: 500;

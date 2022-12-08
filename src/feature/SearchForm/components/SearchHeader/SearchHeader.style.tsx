@@ -15,7 +15,7 @@ export const StyledSearchHeader = styled.header`
 
 export const StyledHeader = styled.p`
   position: relative;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   height: 22px;
   overflow: hidden;
@@ -43,5 +43,13 @@ export const StyledHeader = styled.p`
     100% {
       opacity: 0;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 22px;
   }
 `;

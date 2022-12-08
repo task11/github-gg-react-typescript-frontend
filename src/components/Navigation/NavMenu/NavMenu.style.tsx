@@ -1,12 +1,23 @@
 import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 export const StyledMenu = styled.section`
   width: 220px;
-  height: 120px;
+  height: 140px;
   padding: 16px;
   border-radius: 15px;
   background-color: ${(props) => props.theme.bgColor.modal};
+
+  @media screen and (min-width: 768px) {
+    width: 320px;
+    height: 220px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 320px;
+    height: 220px;
+  }
 `;
 
 export const StyledNavMenu = styled.nav`
@@ -43,5 +54,15 @@ export const StyledMenuItem = styled(Link)`
 
   &:hover {
     color: ${(props) => props.theme.fontColor.hover};
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 120px;
+    height: 120px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 120px;
+    height: 120px;
   }
 `;

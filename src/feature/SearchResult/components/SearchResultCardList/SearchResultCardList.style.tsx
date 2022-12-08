@@ -5,4 +5,12 @@ export const StyledResultCardList = styled.div`
   flex-direction: column;
   width: 260px;
   gap: 10px;
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 500px;
+  }
 `;

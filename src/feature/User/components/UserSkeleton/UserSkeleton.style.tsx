@@ -7,6 +7,14 @@ export const StyledUserSkeleton = styled.section`
   justify-content: center;
   align-items: center;
   gap: 30px;
+
+  @media screen and (min-width: 768px) {
+    width: 440px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 520px;
+  }
 `;
 
 export const StyledUserInfoSkeleton = styled.section`
@@ -21,6 +29,7 @@ const StyledSkeleton = styled.div`
   position: relative;
   overflow: hidden;
   background-color: ${(props) => props.theme.bgColor.card};
+  isolation: isolate;
 
   &::after {
     content: '';

@@ -26,6 +26,7 @@ const StyledSkeleton = styled.div`
   position: relative;
   overflow: hidden;
   background-color: ${(props) => props.theme.skeletonColor.background};
+  isolation: isolate;
 
   &::after {
     content: '';

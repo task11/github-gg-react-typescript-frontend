@@ -7,10 +7,12 @@ export const StyledSearchResultWrapper = styled.section`
   align-items: center;
   gap: 20px;
 `;
+
 const StyledSkeleton = styled.div`
   position: relative;
   overflow: hidden;
   background-color: ${(props) => props.theme.bgColor.card};
+  isolation: isolate;
 
   &::after {
     content: '';
@@ -39,7 +41,7 @@ const StyledSkeleton = styled.div`
 `;
 
 export const StyledSearchResultHeaderSekeleton = styled(StyledSkeleton)`
-  width: 100%;
+  width: 200px;
   height: 34px;
 `;
 
@@ -48,6 +50,14 @@ export const StyledSearchCardListWrapper = styled.div`
   flex-direction: column;
   width: 260px;
   gap: 10px;
+
+  @media screen and (min-width: 768px) {
+    width: 400px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 500px;
+  }
 `;
 
 export const StyledSearchCardSekeleton = styled(StyledSkeleton)`

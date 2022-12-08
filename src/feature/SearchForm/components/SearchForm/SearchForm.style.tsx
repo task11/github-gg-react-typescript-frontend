@@ -34,12 +34,22 @@ export const StyledInputWrapper = styled.div`
   display: flex;
   width: 100%;
   height: 48px;
-  padding: 10px 10px;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
   letter-spacing: -0.018em;
   line-height: 1.6;
   font-weight: 400;
   border: none;
+  padding: 0 10px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 16px;
+  }
 `;
 
 export const StyledInputWithLabel = styled.div`
@@ -95,7 +105,7 @@ export const StyledInput = styled.input`
   padding-left: 10px;
   outline-offset: -2px;
   border: none;
-  caret-color: ${(props) => props.theme.fontColor.default};
+  caret-color: black;
   font-size: 16px;
   font-weight: 500;
   &:focus {
