@@ -19,4 +19,5 @@ export const StyledResultInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  word-break: break-all;
 `;
