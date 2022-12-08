@@ -4,7 +4,7 @@ import { render, cleanup } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 import HomePage from './pages/HomePage/HomePage';
-import NotFountPage from './pages/NotFoundPage/NotFountPage';
+import NotFountPage from './pages/NotFoundPage/NotFoundPage';
 
 afterEach(cleanup);
 
