@@ -6,15 +6,17 @@ import { useIntersectionObserver, useQueryParams } from '../../../utils/hooks';
 
 import RecentService from '../../../utils/services/Recent.service';
 
+import { QueryDataProps } from '../../../types/queryData';
+
 import SearchResultCardList from './SearchResultCardList/SearchResultCardList';
 import SearchResultHeader from './SearchResultHeader/SearchResultHeader';
+import SearchResultSkeleton from './SearchResultSkeleton/SearchResultSkeleton';
+import LoadingSpinner from '../../../components/LoadingSpinner/LoadingSpinner';
 
 import {
   StyledSearchResultContainer,
   StyledTarget,
 } from './SearchResultContainer.style';
-import { QueryDataProps } from '../../../types/queryData';
-import SearchResultSkeleton from './SearchResultSkeleton/SearchResultSkeleton';
 
 export default function SearchResultContainer() {
   const { queryString } = useQueryParams('q');
@@ -60,7 +62,7 @@ export default function SearchResultContainer() {
         searchResult={items}
         onSearchQuery={onSearchQuery}
       />
-      {isFetching ? <div>불러오는 중..</div> : <StyledTarget ref={ref} />}
+      {isFetching ? <LoadingSpinner /> : <StyledTarget ref={ref} />}
     </StyledSearchResultContainer>
   );
 }
