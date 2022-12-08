@@ -8,6 +8,7 @@ export const StyledUserContainer = styled.div`
   align-items: center;
   gap: 30px;
 `;
+
 export const StyledTarget = styled.div`
   height: 1px;
 `;

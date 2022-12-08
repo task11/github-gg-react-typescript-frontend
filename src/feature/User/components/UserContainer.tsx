@@ -14,6 +14,7 @@ import UserInfo from './UserInfo/UserInfo';
 import UserRepositories from './UserRepositories/UserRepositories';
 
 import { StyledTarget, StyledUserContainer } from './UserContainer.style';
+import UserSkeleton from './UserSkeleton/UserSkeleton';
 
 export default function UserContainer() {
   const { username } = useParams();
@@ -47,13 +48,13 @@ export default function UserContainer() {
     BookmarkService.set(queryData);
   };
 
-  if (loadingUser || loadingUserRepositories) return <>loading...</>;
+  if (loadingUser || loadingUserRepositories) return <UserSkeleton />;
 
   return (
     <StyledUserContainer>
       <UserInfo user={user} handleBookmark={handleBookmark} />
       <UserRepositories repositories={repositories} />
-      <StyledTarget ref={ref} />
+      {isFetching ? <div>불러오는 중..</div> : <StyledTarget ref={ref} />}
     </StyledUserContainer>
   );
 }

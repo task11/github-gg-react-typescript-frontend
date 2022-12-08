@@ -9,6 +9,7 @@ export const StyledNotFoundPage = styled.section`
   justify-content: center;
   align-items: center;
   background-color: ${(props) => props.theme.bgColor.background};
+  color: ${(props) => props.theme.fontColor.default};
   gap: 20px;
 
   .notfound-title {

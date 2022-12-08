@@ -14,6 +14,7 @@ import {
   StyledTarget,
 } from './SearchResultContainer.style';
 import { QueryDataProps } from '../../../types/queryData';
+import SearchResultSkeleton from './SearchResultSkeleton/SearchResultSkeleton';
 
 export default function SearchResultContainer() {
   const { queryString } = useQueryParams('q');
@@ -49,7 +50,7 @@ export default function SearchResultContainer() {
   };
 
   if (isLoading || !data) {
-    return <div>스켈레톤</div>;
+    return <SearchResultSkeleton />;
   }
 
   return (

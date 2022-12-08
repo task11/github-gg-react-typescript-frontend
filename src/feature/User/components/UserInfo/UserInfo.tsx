@@ -1,6 +1,8 @@
 import Avatar from '../../../../components/Avatar/Avatar';
 import UserBookmarkButton from '../UserBookmarkButton/UserBookmarkButton';
 
+import useToggleBookmark from '../../hooks/useToggleBookmark';
+
 import { QueryDataProps, UserProps } from '../../../../types';
 
 import {
@@ -11,7 +13,6 @@ import {
   StyledUserName,
   StyledUserRepositoryInfo,
 } from './UserInfo.style';
-import useToggleBookmark from '../../hooks/useToggleBookmark';
 
 interface Props {
   user: UserProps | undefined;
