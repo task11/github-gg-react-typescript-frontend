@@ -54,3 +54,23 @@ export const StyledChartWrapper = styled.div`
     margin-bottom: 5px;
   }
 `;
+
+export const StyledRepositoryLinkWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid ${(props) => props.theme.borderColor.top};
+  padding-top: 12px;
+`;
+
+export const StyledRepositoryLink = styled.a`
+  color: ${(props) => props.theme.fontColor.default};
+
+  &:visited {
+    color: ${(props) => props.theme.fontColor.default};
+  }
+
+  &:hover {
+    color: ${(props) => props.theme.fontColor.accent};
+  }
+`;
