@@ -9,6 +9,8 @@ import { RepositoryProps } from '../../../../types';
 
 import { themeAtom } from '../../../../store';
 
+import UserRepositoryChartSkeleton from '../UserSkeleton/UserRepositoryChartSkeleton';
+
 import {
   StyledRepositoryContent,
   StyledUserRepositoryChart,
@@ -32,7 +34,7 @@ export default function UserRepositoryChart({ repository }: Props) {
     [data],
   );
 
-  if (isLoading) return <>loading..</>;
+  if (isLoading) return <UserRepositoryChartSkeleton />;
 
   return (
     <StyledUserRepositoryChart>
