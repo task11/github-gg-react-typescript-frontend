@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const StyledSearchResult = styled.div`
   position: relative;
-  width: 285px;
-
+  width: 100%;
   max-height: 400px;
   overflow-y: scroll;
   background-color: white;

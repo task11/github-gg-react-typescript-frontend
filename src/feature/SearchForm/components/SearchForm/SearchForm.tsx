@@ -36,13 +36,6 @@ export default function SearchForm({
         <StyledInputButtonWrapper>
           <StyledInputWrapper>
             <StyledInputWithLabel>
-              <div>
-                <label className="label" htmlFor="search_bar_main">
-                  <h1 className="label-title">
-                    Please search for Github users
-                  </h1>
-                </label>
-              </div>
               <div className="search-input-wrapper">
                 <div className="input-wrapper">
                   {!isSearching && (
