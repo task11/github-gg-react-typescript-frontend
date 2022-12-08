@@ -25,25 +25,18 @@ class RecentQueryService {
 
     const dataWithoutDuplicate = this.removeDuplicate(currentData, data);
 
-    this.lengthCheck(dataWithoutDuplicate);
     this.arrayResize(dataWithoutDuplicate);
 
-    LocalService.set('recentQuery', [...dataWithoutDuplicate, data]);
+    LocalService.set('recentQuery', [data, ...dataWithoutDuplicate]);
   }
 
   removeDuplicate(currentData: QueryDataPropsList, data: QueryDataProps) {
     return currentData.filter(({ username }) => username !== data.username);
   }
 
-  lengthCheck(data: QueryDataPropsList) {
-    if (data.length > this.maxLength) {
-      data.shift();
-    }
-  }
-
   arrayResize(data: QueryDataPropsList) {
     if (data.length > this.maxLength) {
-      data.shift();
+      data.pop();
     }
   }
 }

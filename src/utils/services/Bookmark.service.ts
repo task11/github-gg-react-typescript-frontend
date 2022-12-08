@@ -72,15 +72,9 @@ class BookmarkService {
     return data.length;
   }
 
-  lengthCheck(data: QueryDataPropsList) {
-    if (data.length > this.maxLength) {
-      data.shift();
-    }
-  }
-
   arrayResize(data: QueryDataPropsList) {
     if (data.length > this.maxLength) {
-      data.shift();
+      data.pop();
     }
   }
 }
