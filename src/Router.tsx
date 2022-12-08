@@ -4,7 +4,7 @@ import Main from './layouts/Main/Main';
 
 import HomePage from './pages/HomePage/HomePage';
 import SearchPage from './pages/SearchPage/SearchPage';
-import NotFountPage from './pages/NotFoundPage/NotFountPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import UserPage from './pages/UserPage/UserPage';
 import BookmarkPage from './pages/BookmarkPage/BookmarkPage';
 
@@ -18,7 +18,7 @@ export default function Router() {
           <Route path="/user/:username" element={<UserPage />} />
           <Route path="/bookmark" element={<BookmarkPage />} />
         </Route>
-        <Route path="*" element={<NotFountPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
