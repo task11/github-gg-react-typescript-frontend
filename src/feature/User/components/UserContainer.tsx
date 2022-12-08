@@ -12,9 +12,10 @@ import { QueryDataProps } from '../../../types';
 
 import UserInfo from './UserInfo/UserInfo';
 import UserRepositories from './UserRepositories/UserRepositories';
+import UserSkeleton from './UserSkeleton/UserSkeleton';
+import LoadingSpinner from '../../../components/LoadingSpinner/LoadingSpinner';
 
 import { StyledTarget, StyledUserContainer } from './UserContainer.style';
-import UserSkeleton from './UserSkeleton/UserSkeleton';
 
 export default function UserContainer() {
   const { username } = useParams();
@@ -54,7 +55,7 @@ export default function UserContainer() {
     <StyledUserContainer>
       <UserInfo user={user} handleBookmark={handleBookmark} />
       <UserRepositories repositories={repositories} />
-      {isFetching ? <div>불러오는 중..</div> : <StyledTarget ref={ref} />}
+      {isFetching ? <LoadingSpinner /> : <StyledTarget ref={ref} />}
     </StyledUserContainer>
   );
 }
