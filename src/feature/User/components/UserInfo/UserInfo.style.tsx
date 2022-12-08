@@ -70,6 +70,6 @@ export const StyledUserRepositoryInfo = styled.header`
   font-weight: 300;
   margin-top: 20px;
   padding: 10px 10px 0 10px;
-  border-top: 1px solid rgba(108, 108, 108, 0.69);
+  border-top: 1px solid ${(props) => props.theme.borderColor.top};
   color: ${(props) => props.theme.fontColor.default};
 `;

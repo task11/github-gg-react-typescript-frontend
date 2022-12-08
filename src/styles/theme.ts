@@ -16,6 +16,7 @@ export const darkTheme = {
   },
   borderColor: {
     default: '#121212',
+    top: '#bbbbbbb3',
   },
   skeletonColor: {
     default: '#82828200',
@@ -24,10 +25,7 @@ export const darkTheme = {
     background: '#4A4A4D',
   },
   close: '#333333',
-  inputColor: 'whitesmoke',
   buttonColor: '#333333',
-  buttonTextColor: '#333333',
-  hoverButtonText: 'dark',
   boxShadow: '#292929',
 };
 
@@ -49,6 +47,7 @@ export const lightTheme = {
   },
   borderColor: {
     default: '#121212',
+    top: '#bbbbbbb3',
   },
   skeletonColor: {
     default: '#ffffff00',
@@ -57,11 +56,7 @@ export const lightTheme = {
     background: '#e6e1da',
   },
   close: 'black',
-  inputColor: 'dark',
   buttonColor: '#2C3639',
-  buttonTextColor: '#333333',
-  hoverButtonText: 'white',
-  borderBottom: 'lightgray',
   boxShadow: '#292929',
 };
 

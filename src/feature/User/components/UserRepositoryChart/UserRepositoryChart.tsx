@@ -16,6 +16,8 @@ import {
   StyledUserRepositoryChart,
   StyledUserRepositoryInfo,
   StyledChartWrapper,
+  StyledRepositoryLink,
+  StyledRepositoryLinkWrapper,
 } from './UserRepositoryChart.style';
 
 interface Props {
@@ -75,6 +77,11 @@ export default function UserRepositoryChart({ repository }: Props) {
           />
         </StyledChartWrapper>
       )}
+      <StyledRepositoryLinkWrapper>
+        <StyledRepositoryLink href={repository.html_url} target="blank">
+          Go to repository
+        </StyledRepositoryLink>
+      </StyledRepositoryLinkWrapper>
     </StyledUserRepositoryChart>
   );
 }
