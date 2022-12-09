@@ -8,6 +8,7 @@ export const StyledBookmarkCard = styled.div`
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border-radius: 8px;
   padding: 0 12px;
+  cursor: pointer;
 
   span {
     font-size: 16px;
@@ -18,6 +19,16 @@ export const StyledBookmarkCard = styled.div`
   &:hover {
     background-color: ${(props) => props.theme.bgColor.cardHover};
   }
+
+  @media screen and (min-width: 768px) {
+    width: 200px;
+    height: 62px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 240px;
+    height: 72px;
+  }
 `;
 
 export const StyledBookmarkCancel = styled.div`
@@ -27,6 +38,10 @@ export const StyledBookmarkCancel = styled.div`
   right: 2px;
   width: 16px;
   height: 16px;
+
+  svg {
+    fill: ${(props) => props.theme.fontColor.default};
+  }
 `;
 
 export const StyledBookmarkInfo = styled.div`
