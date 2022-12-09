@@ -24,7 +24,7 @@ export const darkTheme = {
     end: '#82828280',
     background: '#4A4A4D',
   },
-  close: '#333333',
+  close: '#ECECEC',
   buttonColor: '#333333',
   boxShadow: '#292929',
 };

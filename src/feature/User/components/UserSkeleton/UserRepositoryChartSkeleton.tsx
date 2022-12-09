@@ -16,6 +16,7 @@ export default function UserRepositoryChartSkeleton() {
       <StyledChartWrapper>
         <StyledChartSkeleton />
       </StyledChartWrapper>
+      <StyledRepositoryInfoSkeleton />
     </StyledUserRepositoryChartWrapper>
   );
 }

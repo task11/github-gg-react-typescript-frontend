@@ -62,6 +62,14 @@ export const StyledRepositoryInfoSkeleton = styled(StyledSkeleton)`
 export const StyledChartWrapper = styled.div`
   width: 100%;
   height: 100px;
+
+  @media screen and (min-width: 768px) {
+    height: 200px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 300px;
+  }
 `;
 
 export const StyledChartSkeleton = styled(StyledSkeleton)`
