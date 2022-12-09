@@ -18,13 +18,13 @@ export interface UserProps {
   type: string;
   site_admin: boolean;
   name: string;
-  company: string;
+  company: string | null;
   blog: string;
   location: string;
-  email: string;
-  hireable: boolean;
+  email: string | null;
+  hireable: boolean | null;
   bio: string;
-  twitter_username: string;
+  twitter_username: string | null;
   public_repos: number;
   public_gists: number;
   followers: number;
