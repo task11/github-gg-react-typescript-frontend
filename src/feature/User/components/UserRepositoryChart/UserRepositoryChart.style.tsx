@@ -5,7 +5,7 @@ export const StyledUserRepositoryChart = styled.section`
   flex-direction: column;
   gap: 16px;
   width: 100%;
-  max-height: 500px;
+  max-height: 600px;
   background-color: ${(props) => props.theme.bgColor.card};
   padding: 16px;
   border-radius: 8px;
@@ -42,6 +42,18 @@ export const StyledRepositoryContent = styled.div`
   .description {
     line-height: 1.4;
   }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 14px;
+    padding: 16px;
+    gap: 10px;
+  }
 `;
 
 export const StyledChartWrapper = styled.div`
@@ -52,6 +64,14 @@ export const StyledChartWrapper = styled.div`
     font-size: 12px;
     font-weight: 300;
     margin-bottom: 5px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 14px;
   }
 `;
 
