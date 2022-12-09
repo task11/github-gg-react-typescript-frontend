@@ -8,7 +8,7 @@ export const StyledSearchForm = styled.form`
 export const StyledSearchInputWrapper = styled.div`
   display: flex;
   width: 100%;
-  max-width: 490px;
+
   height: 73px;
   align-items: center;
 
