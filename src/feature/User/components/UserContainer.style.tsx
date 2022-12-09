@@ -2,18 +2,18 @@ import styled from 'styled-components';
 
 export const StyledUserContainer = styled.div`
   display: flex;
-  min-width: 300px;
+  width: 300px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 30px;
 
   @media screen and (min-width: 768px) {
-    min-width: 440px;
+    width: 440px;
   }
 
   @media screen and (min-width: 1024px) {
-    min-width: 520px;
+    width: 520px;
   }
 `;
 
