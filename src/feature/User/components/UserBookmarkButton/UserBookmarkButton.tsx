@@ -22,7 +22,7 @@ export default function UserBookmarkButton({
     toggleBookmark();
   };
   return (
-    <StyledBookmark onClick={handleBookmarkClick}>
+    <StyledBookmark data-testid="bookmarkButton" onClick={handleBookmarkClick}>
       {isBookmark ? <Icons.FilledBookmark /> : <Icons.OutlineBookmark />}
     </StyledBookmark>
   );
