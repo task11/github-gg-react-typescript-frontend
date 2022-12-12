@@ -1,6 +1,6 @@
 # Github.gg Project
 
-[Link to github.gg](http://imjaykim-personal-bucket.s3-website.ap-northeast-2.amazonaws.com/)
+[Link to github.gg](https://d3c97fi8gf3kcj.cloudfront.net/)
 
 ## 프로젝트
 
@@ -19,6 +19,7 @@
 ## 주요 기능
 
 - 깃허브에 등록되어있는 유저 검색 기능
+- 검색 자동완성 & 최근 검색어/유저 저장 기능
 - 유저 별 레포지토리 조회
 - 레포지토리 설명, 토픽, 사용 언어 분석 차트 조회
 - 유저 북마크 기능
