@@ -14,7 +14,7 @@
 
 이 프로젝트는 기존 깃허브의 유저 검색 기능을 조금 더 가볍고 빠르게 이용하고자 개발되었습니다.
 
-[이렇게 개발했어요.(Link to Notion)]()
+[이렇게 개발했어요.(Link to Notion)](https://bustling-hosta-7bf.notion.site/Github-gg-aa13110e8a4044019ad60e856070e9fa)
 
 ## 주요 기능
 
