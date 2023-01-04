@@ -39,7 +39,10 @@ export default function SearchForm({
               <div className="search-input-wrapper">
                 <div className="input-wrapper">
                   {!isSearching && (
-                    <div className="icon-placeholder-wrapper">
+                    <label
+                      htmlFor="search_bar_main"
+                      className="icon-placeholder-wrapper"
+                    >
                       <div className="icon-placeholder">
                         <div className="search-icon">
                           <Icons.Search />
@@ -48,7 +51,7 @@ export default function SearchForm({
                           Enter github user.
                         </div>
                       </div>
-                    </div>
+                    </label>
                   )}
                   <StyledInput
                     type="search"

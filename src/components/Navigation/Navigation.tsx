@@ -26,7 +26,11 @@ export default function Navigation() {
   return (
     <StyledNavigation>
       <StyledNavItem>
-        <StyledNavButton type="button" onClick={toggleModal}>
+        <StyledNavButton
+          type="button"
+          onClick={toggleModal}
+          aria-label="toggle modal"
+        >
           <Icons.Github />
           <Icons.ArrowDown />
         </StyledNavButton>
@@ -35,7 +39,11 @@ export default function Navigation() {
         <Logo size="md" mode={THEME_MODE.dark} />
       </StyledLogoButton>
       <StyledNavItem>
-        <StyledModeButton type="button" onClick={onChangeTheme}>
+        <StyledModeButton
+          type="button"
+          onClick={onChangeTheme}
+          aria-label="change theme mode"
+        >
           {isDark ? <Icons.LightMode /> : <Icons.DarkMode />}
         </StyledModeButton>
       </StyledNavItem>

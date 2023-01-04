@@ -16,8 +16,20 @@ export default function Logo({ size, mode }: Props) {
   const sizeStyle = SIZES[size];
 
   if (mode === THEME_MODE.light) {
-    return <StyledLogo src={LogoImgDark} sizeStyle={sizeStyle} />;
+    return (
+      <StyledLogo
+        src={LogoImgDark}
+        sizeStyle={sizeStyle}
+        alt={`${size} ${mode} logo image`}
+      />
+    );
   }
 
-  return <StyledLogo src={LogoImgLight} sizeStyle={sizeStyle} />;
+  return (
+    <StyledLogo
+      src={LogoImgLight}
+      sizeStyle={sizeStyle}
+      alt={`${size} ${mode} logo image`}
+    />
+  );
 }
