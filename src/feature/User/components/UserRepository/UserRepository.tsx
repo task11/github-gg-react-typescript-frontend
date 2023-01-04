@@ -28,7 +28,11 @@ export default function UserRepository({ repository }: Props) {
           <strong>{repository.name}</strong>
         </StyledUserRepositoryTitle>
         <UserRepositoryTopicList topics={repository.topics} />
-        <StyledDropdown>
+        <StyledDropdown
+          type="button"
+          name="chart-button"
+          aria-label="flip repository chart"
+        >
           {toggleState ? <Icons.OutlineClose /> : <Icons.OutlineOpen />}
         </StyledDropdown>
       </StyledUserRepository>
