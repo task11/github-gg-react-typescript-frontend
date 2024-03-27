@@ -15,7 +15,7 @@ import {
   StyledNavButton,
   StyledNavigation,
   StyledNavItem,
-} from './Navigation.style';
+} from './styles';
 
 export default function Navigation() {
   const { theme, onChangeTheme } = useTheme();
