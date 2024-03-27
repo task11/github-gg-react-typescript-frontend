@@ -5,7 +5,7 @@ import {
   StyledContainer,
   StyledModalBlock,
   StyledModalContents,
-} from './ModalFrame.style';
+} from './styles';
 
 interface Props {
   handleModal: (e: React.MouseEvent<HTMLDivElement>) => void;
