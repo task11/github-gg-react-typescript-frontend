@@ -1,10 +1,17 @@
-import SearchFormContainer from '../../feature/SearchForm/components/SearchFormContainer';
-import { StyledHome } from './HomePage.style';
+import SearchForm from '../../components/Search/SearchForm';
+import SearchHeader from '../../components/Search/SearchHeader';
+import SearchResultSummary from '../../components/Search/SearchResultSummary';
+
+import { StyledHome, StyledSearchFormContainer } from './styles';
 
 export default function HomePage() {
   return (
     <StyledHome>
-      <SearchFormContainer />
+      <StyledSearchFormContainer>
+        <SearchHeader />
+        <SearchForm />
+        <SearchResultSummary />
+      </StyledSearchFormContainer>
     </StyledHome>
   );
 }
