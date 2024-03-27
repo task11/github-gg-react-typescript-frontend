@@ -3,9 +3,9 @@ import LogoImgLight from '../../assets/images/githubggLogoLight.png';
 import { Mode } from '../../types';
 import { THEME_MODE } from '../../utils/common';
 
-import { StyledLogo } from './Logo.style';
+import { StyledLogo } from './styles';
 
-import { SIZES } from './Logo.variant';
+import { SIZES } from './variants';
 
 interface Props {
   size: 'sm' | 'md' | 'lg';
@@ -20,7 +20,7 @@ export default function Logo({ size, mode }: Props) {
       <StyledLogo
         src={LogoImgDark}
         sizeStyle={sizeStyle}
-        alt={`${size} ${mode} logo image`}
+        alt={`${mode} mode ${size} sizes logo image`}
       />
     );
   }
@@ -29,7 +29,7 @@ export default function Logo({ size, mode }: Props) {
     <StyledLogo
       src={LogoImgLight}
       sizeStyle={sizeStyle}
-      alt={`${size} ${mode} logo image`}
+      alt={`${mode} mode ${size} sizes logo image`}
     />
   );
 }
