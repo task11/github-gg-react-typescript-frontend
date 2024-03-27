@@ -20,7 +20,7 @@ export const StyledMenu = styled.section`
   }
 `;
 
-export const StyledNavMenu = styled.nav`
+export const StyledPageMenu = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;

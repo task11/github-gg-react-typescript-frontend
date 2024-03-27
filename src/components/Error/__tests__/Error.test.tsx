@@ -12,8 +12,8 @@ import { CustomThemeProvider } from '../../../styles';
 
 const queryClient = new QueryClient();
 
-describe('Avatar', () => {
-  it('Shows region', () => {
+describe('Error', () => {
+  it('Render component', () => {
     const { getByText } = render(<Error />, {
       wrapper: ({ children }) => (
         <QueryClientProvider client={queryClient}>

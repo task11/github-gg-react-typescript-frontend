@@ -1,14 +1,14 @@
-import Icons from '../../Icons';
-import { StyledMenu, StyledMenuItem, StyledNavMenu } from './NavMenu.style';
+import Icons from '../Icons';
+import { StyledMenu, StyledMenuItem, StyledPageMenu } from './styles';
 
 interface Props {
   toggleModal: () => void;
 }
 
-export default function NavMenu({ toggleModal }: Props) {
+export default function PageMenu({ toggleModal }: Props) {
   return (
     <StyledMenu>
-      <StyledNavMenu>
+      <StyledPageMenu>
         <StyledMenuItem to="/" onClick={toggleModal}>
           <Icons.SearchColor />
           <span>Home</span>
@@ -17,7 +17,7 @@ export default function NavMenu({ toggleModal }: Props) {
           <Icons.Bookmark />
           <span>Bookmark</span>
         </StyledMenuItem>
-      </StyledNavMenu>
+      </StyledPageMenu>
     </StyledMenu>
   );
 }

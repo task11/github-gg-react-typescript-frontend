@@ -7,7 +7,7 @@ import { THEME_MODE } from '../../utils/common';
 import Icons from '../Icons';
 import Logo from '../Logo/Logo';
 import ReactPortal from '../Modal/ReactPortal';
-import NavMenu from './NavMenu/NavMenu';
+import PageMenu from '../PageMenu/PageMenu';
 
 import {
   StyledLogoButton,
@@ -49,7 +49,7 @@ export default function Navigation() {
       </StyledNavItem>
       {modalState && (
         <ReactPortal>
-          <NavMenu toggleModal={toggleModal} />
+          <PageMenu toggleModal={toggleModal} />
         </ReactPortal>
       )}
     </StyledNavigation>
