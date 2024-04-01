@@ -9,7 +9,7 @@ import { RecoilRoot } from 'recoil';
 import { CustomThemeProvider } from '../../../../styles';
 import { QueryDataProps, SearchUserProps } from '../../../../types';
 
-import SearchResultCard from '../SearchResultCard/SearchResultCard';
+import SearchResultCard from '../SearchResultCard';
 
 const queryClient = new QueryClient();
 

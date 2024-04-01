@@ -3,7 +3,7 @@ import {
   StyledSearchCardSekeleton,
   StyledSearchResultHeaderSekeleton,
   StyledSearchResultWrapper,
-} from './SearchResultSkeleton.style';
+} from './styles';
 
 export default function SearchResultSkeleton() {
   return (

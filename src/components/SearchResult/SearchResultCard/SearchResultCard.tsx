@@ -1,9 +1,9 @@
-import Avatar from '../../../../components/Avatar/Avatar';
-import Icons from '../../../../components/Icons';
+import Avatar from '../../Avatar';
+import Icons from '../../Icons';
 
-import { QueryDataProps, SearchUserProps } from '../../../../types';
+import { QueryDataProps, SearchUserProps } from '../../../types';
 
-import { StyledResultCard, StyledResultInfo } from './SearchResultCard.style';
+import { StyledResultCard, StyledResultInfo } from './styles';
 
 interface Props {
   result: SearchUserProps;

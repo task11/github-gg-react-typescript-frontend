@@ -1,7 +1,7 @@
 import { QueryFunctionContext, useInfiniteQuery } from '@tanstack/react-query';
-import { searchCache } from '../../../utils/models';
+import { searchCache } from '../../models';
 
-import SearchService from '../../../utils/services/Search.service';
+import SearchService from '../../services/Search.service';
 
 export default function useSearchResult(query: string) {
   return useInfiniteQuery(
