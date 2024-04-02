@@ -8,31 +8,24 @@ import { RecoilRoot } from 'recoil';
 
 import { CustomThemeProvider } from '../../../../styles';
 
-import BookmarkGrid from '../BookmarkGrid/BookmarkGrid';
+import BookmarkItem from '../BookmarkItem';
 
 const queryClient = new QueryClient();
 
-const expectedData = [
-  {
-    id: 350283,
-    avatarUrl: 'https://avatars.githubusercontent.com/u/350283?v=4',
-    username: 'abbychau',
-  },
-  {
-    id: 89209626,
-    avatarUrl: 'https://avatars.githubusercontent.com/u/89209626?v=4',
-    username: 'task11',
-  },
-];
+const expectedData = {
+  id: 89209626,
+  avatarUrl: 'https://avatars.githubusercontent.com/u/89209626?v=4',
+  username: 'task11',
+};
 
-describe('BookmarkGrid', () => {
+describe('BookmarkItem', () => {
   const handleCancel = jest.fn();
   const handleNavigate = jest.fn();
 
   const renderer = () => {
     const { getByText } = render(
-      <BookmarkGrid
-        bookmarks={expectedData}
+      <BookmarkItem
+        bookmark={expectedData}
         handleBookmarkCancel={handleCancel}
         navigateBookmarkUser={handleNavigate}
       />,

@@ -1,4 +1,4 @@
-import { StyledBookmarkHeader } from './BookmarkHeader.style';
+import { StyledBookmarkHeader } from './styles';
 
 interface Props {
   totalCount: number;

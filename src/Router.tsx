@@ -6,7 +6,7 @@ import HomePage from './pages/HomePage';
 import SearchPage from './pages/SearchPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import UserPage from './pages/UserPage/UserPage';
-import BookmarkPage from './pages/BookmarkPage/BookmarkPage';
+import BookmarkPage from './pages/BookmarkPage';
 
 export default function Router() {
   return (

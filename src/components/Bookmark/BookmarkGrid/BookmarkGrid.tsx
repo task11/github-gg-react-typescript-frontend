@@ -1,8 +1,8 @@
 import BookmarkItem from '../BookmarkItem/BookmarkItem';
 
-import { QueryDataPropsList } from '../../../../types';
+import { QueryDataPropsList } from '../../../types';
 
-import { StyledBookmarkGrid } from './BookmarkGrid.style';
+import { StyledBookmarkGrid } from './styles';
 
 interface Props {
   bookmarks: QueryDataPropsList;

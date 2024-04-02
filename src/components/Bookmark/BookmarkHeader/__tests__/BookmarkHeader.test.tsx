@@ -8,7 +8,7 @@ import { RecoilRoot } from 'recoil';
 
 import { CustomThemeProvider } from '../../../../styles';
 
-import BookmarkHeader from '../BookmarkHeader/BookmarkHeader';
+import BookmarkHeader from '../BookmarkHeader';
 
 const queryClient = new QueryClient();
 

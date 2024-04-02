@@ -1,13 +1,13 @@
-import Avatar from '../../../../components/Avatar/Avatar';
-import Icons from '../../../../components/Icons';
+import Avatar from '../../Avatar';
+import Icons from '../../Icons';
 
-import { QueryDataProps } from '../../../../types';
+import { QueryDataProps } from '../../../types';
 
 import {
   StyledBookmarkCancel,
   StyledBookmarkCard,
   StyledBookmarkInfo,
-} from './BookmarkItem.style';
+} from './styles';
 
 interface Props {
   bookmark: QueryDataProps;

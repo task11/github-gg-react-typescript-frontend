@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import BookmarkService from '../../../utils/services/Bookmark.service';
+import BookmarkService from '../../services/Bookmark.service';
 
 export default function useBookmark() {
   const [bookmarks, setBookmarks] = useState(
