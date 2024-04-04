@@ -1,4 +1,5 @@
-import { useRecoilValue } from 'recoil';
+import { useEffect } from 'react';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { searchQueryAtom } from '../../../store';
 
 import Icons from '../../Icons';
@@ -19,12 +20,18 @@ import {
 } from './styles';
 
 export default function SearchForm() {
-  const searchQuery = useRecoilValue(searchQueryAtom);
+  const [searchQuery, setSearchQuery] = useRecoilState(searchQueryAtom);
 
   const { isSearching, setIsFocus, handleSearchQuery, initSearchQuery } =
     useSearchQuery();
 
   const { handleSubmit } = useHandleSearch();
+
+  useEffect(() => {
+    return () => {
+      setSearchQuery('');
+    };
+  }, []);
 
   return (
     <StyledSearchForm onSubmit={handleSubmit}>
