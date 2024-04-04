@@ -1,6 +1,6 @@
 import UserContainer from '../../feature/User/components/UserContainer';
 
-import { StyledUser } from './UserPage.style';
+import { StyledUser } from './styles';
 
 export default function UserPage() {
   return (

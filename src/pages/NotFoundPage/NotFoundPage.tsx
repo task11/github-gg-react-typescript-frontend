@@ -1,10 +1,6 @@
 import Icons from '../../components/Icons';
 
-import {
-  IconWrapper,
-  StyledLink,
-  StyledNotFoundPage,
-} from './NotFoundPage.style';
+import { IconWrapper, StyledLink, StyledNotFoundPage } from './styles';
 
 export default function NotFoundPage() {
   return (
