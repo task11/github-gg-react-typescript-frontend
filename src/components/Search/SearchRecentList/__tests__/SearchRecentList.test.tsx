@@ -47,13 +47,13 @@ describe('SearchRecentList', () => {
       let store: any = storage;
 
       return {
-        getItem: function (key: string) {
+        getItem(key: string) {
           return store[key] ?? null;
         },
-        setItem: function (key: string, value: string) {
+        setItem(key: string, value: string) {
           store[key] = value.toString();
         },
-        clear: function () {
+        clear() {
           store = {};
         },
       };
