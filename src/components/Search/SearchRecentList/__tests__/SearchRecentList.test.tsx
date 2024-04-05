@@ -43,7 +43,7 @@ describe('SearchRecentList', () => {
   };
 
   const createMockLocalStorage = (storage: any) => {
-    let localStorageMock = (function () {
+    const localStorageMock = (function () {
       let store: any = storage;
 
       return {

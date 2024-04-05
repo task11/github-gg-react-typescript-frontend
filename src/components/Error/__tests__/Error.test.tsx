@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 import Error from '../Error';
 
 import { MemoryRouter } from 'react-router-dom';
 
 import { RecoilRoot } from 'recoil';
-
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { CustomThemeProvider } from '../../../styles';
 
