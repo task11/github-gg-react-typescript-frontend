@@ -1,6 +1,6 @@
-import { useToggle } from '../../../utils/hooks';
-
 import Icons from '../../Icons';
+
+import useToggle from '../../../utils/hooks/useToggle';
 
 import UserRepositoryChart from '../UserRepositoryChart';
 import UserRepositoryTopicList from '../UserRepositoryTopicList';

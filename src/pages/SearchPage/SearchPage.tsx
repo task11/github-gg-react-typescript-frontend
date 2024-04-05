@@ -1,4 +1,4 @@
-import { useQueryParams } from '../../utils/hooks';
+import useQueryParams from '../../utils/hooks/useQueryParams';
 import useSearchResult from '../../utils/hooks/useSearchResult';
 
 import SearchResultCardList from '../../components/SearchResult/SearchResultCardList';

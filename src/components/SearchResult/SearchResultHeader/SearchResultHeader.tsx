@@ -1,6 +1,7 @@
 import { addCommas } from '../../../utils/common/addCommas';
-import { useQueryParams } from '../../../utils/hooks';
-import useSearchResult from '../../../utils/hooks/useSearchResult/useSearchResult';
+
+import useQueryParams from '../../../utils/hooks/useQueryParams';
+import useSearchResult from '../../../utils/hooks/useSearchResult';
 
 import { StyledSearchResultHeader } from './styles';
 

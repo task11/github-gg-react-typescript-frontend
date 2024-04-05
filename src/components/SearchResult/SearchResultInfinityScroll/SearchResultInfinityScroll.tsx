@@ -1,7 +1,10 @@
 import Error from '../../Error';
 import LoadingSpinner from '../../LoadingSpinner';
-import { useIntersectionObserver, useQueryParams } from '../../../utils/hooks';
-import useSearchResult from '../../../utils/hooks/useSearchResult/useSearchResult';
+
+import useQueryParams from '../../../utils/hooks/useQueryParams';
+import useIntersectionObserver from '../../../utils/hooks/useIntersectionObserver';
+import useSearchResult from '../../../utils/hooks/useSearchResult';
+
 import { StyledErrorWrapper, StyledTarget } from './styles';
 
 export default function SearchResultInfinityScroll() {

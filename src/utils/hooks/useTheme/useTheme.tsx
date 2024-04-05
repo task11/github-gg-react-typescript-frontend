@@ -1,13 +1,13 @@
 import { useCallback, useLayoutEffect } from 'react';
 import { useRecoilState } from 'recoil';
 
-import { themeAtom } from '../../store';
+import { themeAtom } from '../../../store';
 
-import { Mode } from '../../types';
-import { THEME_MODE } from '../common';
-import LocalService from '../services/Local.service';
+import { Mode } from '../../../types';
+import { THEME_MODE } from '../../common';
+import LocalService from '../../services/Local.service';
 
-export function useTheme() {
+export default function useTheme() {
   const [theme, setTheme] = useRecoilState(themeAtom);
 
   const onChangeTheme = useCallback(() => {

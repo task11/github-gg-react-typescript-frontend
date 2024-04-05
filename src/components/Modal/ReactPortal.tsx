@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom';
-import { useToggleModal } from '../../utils/hooks/useToggleModal';
 
 import ModalFrame from './ModalFrame';
+
+import useToggleModal from '../../utils/hooks/useToggleModal';
 
 interface Props {
   children: React.ReactNode;

@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
-import { useTheme } from '../../utils/hooks';
-import { useToggleModal } from '../../utils/hooks/useToggleModal';
+
+import useTheme from '../../utils/hooks/useTheme';
+import useToggleModal from '../../utils/hooks/useToggleModal';
 
 import { THEME_MODE } from '../../utils/common';
 

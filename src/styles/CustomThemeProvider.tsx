@@ -1,7 +1,8 @@
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './theme';
 
-import { useTheme } from '../utils/hooks';
+import useTheme from '../utils/hooks/useTheme';
+
 import { THEME_MODE } from '../utils/common';
 
 interface Props {

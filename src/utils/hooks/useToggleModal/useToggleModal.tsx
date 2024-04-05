@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { useRecoilState } from 'recoil';
-import { modalAtom } from '../../store/modal';
+import { modalAtom } from '../../../store/modal';
 
-export function useToggleModal() {
+export default function useToggleModal() {
   const [modalState, setModalState] = useRecoilState(modalAtom);
 
   const toggleModal = useCallback(() => {

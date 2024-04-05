@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import useUser from '../../utils/hooks/useUser';
 import useUserRepositories from '../../utils/hooks/useUserRepositories';
-import { useIntersectionObserver } from '../../utils/hooks';
+import useIntersectionObserver from '../../utils/hooks/useIntersectionObserver';
 
 import { QueryDataProps } from '../../types';
 

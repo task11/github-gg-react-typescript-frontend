@@ -6,7 +6,7 @@ import SearchResultList from '../SearchResultList';
 
 import useSearchQuery from '../../../utils/hooks/useSearchQuery';
 import useHandleSearch from '../../../utils/hooks/useHandleSearch';
-import { useDebounce } from '../../../utils/hooks';
+import useDebounce from '../../../utils/hooks/useDebounce';
 import useSearch from '../../../utils/hooks/useSearch';
 
 import { StyledSearchResult } from './styles';

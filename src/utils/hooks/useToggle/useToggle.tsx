@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 
-export function useToggle() {
+export default function useToggle() {
   const [toggleState, setToggleState] = useState(false);
 
   const handleToggle = useCallback(() => {

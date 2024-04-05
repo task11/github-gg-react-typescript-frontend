@@ -2,9 +2,8 @@ import { act, renderHook } from '@testing-library/react';
 
 import { RecoilRoot } from 'recoil';
 
-import { THEME_MODE } from '../../common';
-
-import { useTheme } from '../useTheme';
+import { THEME_MODE } from '../../../common';
+import useTheme from '../useTheme';
 
 describe('UseTheme', () => {
   const renderer = () => {

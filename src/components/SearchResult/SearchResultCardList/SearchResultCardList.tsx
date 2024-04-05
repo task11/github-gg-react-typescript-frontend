@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import useSearchResult from '../../../utils/hooks/useSearchResult';
-import { useQueryParams } from '../../../utils/hooks';
+import useQueryParams from '../../../utils/hooks/useQueryParams';
 
 import { QueryDataProps } from '../../../types';
 import RecentService from '../../../utils/services/Recent.service';

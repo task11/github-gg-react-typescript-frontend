@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
 import { RecoilRoot } from 'recoil';
 
-import { useToggleModal } from '../useToggleModal';
+import useToggleModal from '../useToggleModal';
 
 describe('UseToggleModal', () => {
   const renderer = () => {

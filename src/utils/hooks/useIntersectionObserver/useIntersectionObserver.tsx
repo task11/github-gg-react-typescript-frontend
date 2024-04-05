@@ -11,7 +11,7 @@ type IntersectHandler = (
   observer: IntersectionObserver,
 ) => void;
 
-export function useIntersectionObserver(
+export default function useIntersectionObserver(
   onIntersect: IntersectHandler,
   options?: IntersectionObserverInit,
 ) {
