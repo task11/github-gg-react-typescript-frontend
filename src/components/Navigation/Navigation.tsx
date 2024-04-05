@@ -1,13 +1,14 @@
 import { useMemo } from 'react';
-import { useTheme } from '../../utils/hooks';
-import { useToggleModal } from '../../utils/hooks/useToggleModal';
+
+import useTheme from '../../utils/hooks/useTheme';
+import useToggleModal from '../../utils/hooks/useToggleModal';
 
 import { THEME_MODE } from '../../utils/common';
 
 import Icons from '../Icons';
 import Logo from '../Logo/Logo';
 import ReactPortal from '../Modal/ReactPortal';
-import NavMenu from './NavMenu/NavMenu';
+import PageMenu from '../PageMenu/PageMenu';
 
 import {
   StyledLogoButton,
@@ -15,7 +16,7 @@ import {
   StyledNavButton,
   StyledNavigation,
   StyledNavItem,
-} from './Navigation.style';
+} from './styles';
 
 export default function Navigation() {
   const { theme, onChangeTheme } = useTheme();
@@ -49,7 +50,7 @@ export default function Navigation() {
       </StyledNavItem>
       {modalState && (
         <ReactPortal>
-          <NavMenu toggleModal={toggleModal} />
+          <PageMenu toggleModal={toggleModal} />
         </ReactPortal>
       )}
     </StyledNavigation>

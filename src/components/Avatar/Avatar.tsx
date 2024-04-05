@@ -1,6 +1,6 @@
-import { StyledImg } from './Avatar.style';
+import { StyledImg } from './styles';
 
-import { SIZES } from './Avatar.variant';
+import { SIZES } from './variants';
 
 interface Props {
   src: string;
@@ -14,7 +14,7 @@ export default function Avatar({ src, size }: Props) {
     <StyledImg
       src={src}
       sizeStyle={sizeStyle}
-      alt={`avatar of the ${size} image`}
+      alt={`avatar of the ${size} sizes image`}
     />
   );
 }

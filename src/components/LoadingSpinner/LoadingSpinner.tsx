@@ -1,4 +1,4 @@
-import { StyledLoadingSpinner } from './LoadingSpinner.style';
+import { StyledLoadingSpinner } from './styles';
 
 export default function LoadingSpinner() {
   return <StyledLoadingSpinner />;

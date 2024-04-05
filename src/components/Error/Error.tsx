@@ -1,4 +1,4 @@
-import { StyledError, StyledErrorWrapper } from './Error.style';
+import { StyledError, StyledErrorWrapper } from './styles';
 
 export default function Error() {
   return (

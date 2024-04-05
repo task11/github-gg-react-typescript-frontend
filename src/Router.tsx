@@ -2,11 +2,11 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Main from './layouts/Main/Main';
 
-import HomePage from './pages/HomePage/HomePage';
-import SearchPage from './pages/SearchPage/SearchPage';
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import UserPage from './pages/UserPage/UserPage';
-import BookmarkPage from './pages/BookmarkPage/BookmarkPage';
+import HomePage from './pages/HomePage';
+import SearchPage from './pages/SearchPage';
+import NotFoundPage from './pages/NotFoundPage';
+import UserPage from './pages/UserPage';
+import BookmarkPage from './pages/BookmarkPage';
 
 export default function Router() {
   return (

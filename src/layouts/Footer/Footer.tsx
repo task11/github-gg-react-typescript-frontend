@@ -1,4 +1,4 @@
-import { useTheme } from '../../utils/hooks';
+import useTheme from '../../utils/hooks/useTheme';
 
 import Logo from '../../components/Logo/Logo';
 
