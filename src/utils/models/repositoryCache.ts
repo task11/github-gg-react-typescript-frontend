@@ -6,4 +6,9 @@ export const repositoryCache = {
     'language',
     { username, repositoryname },
   ],
+  getRepositoryCommits: (username: string, repositoryname: string) => [
+    REPOSITORY_KEY,
+    'commits',
+    { username, repositoryname },
+  ],
 };
