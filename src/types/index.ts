@@ -3,3 +3,4 @@ export * from './queryData';
 export * from './user';
 export * from './search';
 export * from './repository';
+export * from './Commit';
