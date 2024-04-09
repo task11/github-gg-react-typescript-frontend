@@ -67,12 +67,3 @@ export const StyledUserContent = styled.div`
     }
   }
 `;
-
-export const StyledUserRepositoryInfo = styled.header`
-  font-size: 14px;
-  font-weight: 300;
-  margin-top: 20px;
-  padding: 10px 10px 0 10px;
-  border-top: 1px solid ${(props) => props.theme.borderColor.top};
-  color: ${(props) => props.theme.fontColor.default};
-`;

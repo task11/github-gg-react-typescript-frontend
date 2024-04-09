@@ -1,14 +1,14 @@
 import { QueryFunctionContext, useInfiniteQuery } from '@tanstack/react-query';
 
-import { userCache } from '../../models';
+import { repositoryCache } from '../../models';
 
-import UserService from '../../services/User.service';
+import RepositoryService from '../../services/Repository.service';
 
 export default function useUserRepositories(username: string) {
   return useInfiniteQuery(
-    userCache.getUserRepositories(username),
+    repositoryCache.getPagenatedUserRepositories(username),
     ({ pageParam = 1 }: QueryFunctionContext) =>
-      UserService.getUserRepositories(username, pageParam),
+      RepositoryService.getPagenatedUserRepositories(username, pageParam),
     {
       keepPreviousData: true,
       refetchOnWindowFocus: true,
