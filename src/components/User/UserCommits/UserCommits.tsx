@@ -1,5 +1,6 @@
 import useRecentCommits from '../../../utils/hooks/useRecentCommits';
 import UserCommitContents from '../UserCommitContents';
+import UserCommitsSkeleton from '../UserCommitsSkeleton';
 
 import {
   StyledUserCommit,
@@ -14,7 +15,7 @@ interface Props {
 export default function UserCommits({ username }: Props) {
   const { commits, isLoading } = useRecentCommits(username || '');
 
-  if (isLoading) return <></>;
+  if (isLoading) return <UserCommitsSkeleton />;
 
   return (
     <StyledUserCommit>
