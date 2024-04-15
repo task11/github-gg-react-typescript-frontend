@@ -12,6 +12,7 @@ import OutlineOpen from './OutlineOpen';
 import OutlineClose from './OutlineClose';
 import OutlineBookmark from './OutlineBookmark';
 import FilledBookmark from './FilledBookmark';
+import Comment from './Comment';
 
 export default {
   ArrowDown,
@@ -28,4 +29,5 @@ export default {
   OutlineClose,
   OutlineBookmark,
   FilledBookmark,
+  Comment,
 };
