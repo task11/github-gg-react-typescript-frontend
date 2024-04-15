@@ -14,6 +14,8 @@ interface Props {
 export default function UserCommits({ username }: Props) {
   const { commits, isLoading } = useRecentCommits(username || '');
 
+  if (isLoading) return <></>;
+
   return (
     <StyledUserCommit>
       <StyledUserCommitsHeader>Last 3 Commits</StyledUserCommitsHeader>

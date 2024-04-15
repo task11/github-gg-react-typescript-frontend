@@ -1,5 +1,5 @@
 import { CommitProps } from '../../../types';
-import Avatar from '../../Avatar';
+
 import Icons from '../../Icons';
 
 import {
