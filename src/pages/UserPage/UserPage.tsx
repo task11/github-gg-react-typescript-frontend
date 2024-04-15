@@ -14,6 +14,7 @@ import Error from '../../components/Error';
 import UserInfo from '../../components/User/UserInfo';
 import UserRepositories from '../../components/User/UserRepositories';
 import LoadingSpinner from '../../components/LoadingSpinner';
+import UserCommits from '../../components/User/UserCommits';
 
 import {
   StyledErrorWrapper,
@@ -73,7 +74,11 @@ export default function UserPage() {
     <StyledUser>
       <StyledUserContainer>
         <UserInfo user={user} handleBookmark={handleBookmark} />
-        <UserRepositories repositories={repositories} />
+        <UserCommits username={username} />
+        <UserRepositories
+          publicRepositoryCounts={user.public_repos}
+          repositories={repositories}
+        />
         {isFetching ? <LoadingSpinner /> : <StyledTarget ref={ref} />}
       </StyledUserContainer>
     </StyledUser>

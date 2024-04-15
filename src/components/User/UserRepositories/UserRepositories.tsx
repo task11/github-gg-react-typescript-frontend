@@ -2,18 +2,31 @@ import { RepositoriesProps } from '../../../types';
 
 import UserRepository from '../UserRepository';
 
-import { StyledUserRepositories } from './styles';
+import {
+  StyledUserRepositories,
+  StyledUserRepositoriesGrid,
+  StyledUserRepositoryInfo,
+} from './styles';
 
 interface Props {
+  publicRepositoryCounts: number;
   repositories: RepositoriesProps;
 }
 
-export default function UserRepositories({ repositories }: Props) {
+export default function UserRepositories({
+  publicRepositoryCounts,
+  repositories,
+}: Props) {
   return (
     <StyledUserRepositories>
-      {repositories.map((repository) => (
-        <UserRepository key={repository.id} repository={repository} />
-      ))}
+      <StyledUserRepositoryInfo>
+        {publicRepositoryCounts} Repositories
+      </StyledUserRepositoryInfo>
+      <StyledUserRepositoriesGrid>
+        {repositories.map((repository) => (
+          <UserRepository key={repository.id} repository={repository} />
+        ))}
+      </StyledUserRepositoriesGrid>
     </StyledUserRepositories>
   );
 }

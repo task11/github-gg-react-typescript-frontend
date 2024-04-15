@@ -1,7 +1,7 @@
 import Avatar from '../../Avatar/Avatar';
 import UserBookmarkButton from '../UserBookmarkButton/UserBookmarkButton';
 
-import useToggleBookmark from '../../../utils/hooks/useToggleBookmark/useToggleBookmark';
+import useToggleBookmark from '../../../utils/hooks/useToggleBookmark';
 
 import { QueryDataProps, UserProps } from '../../../types';
 
@@ -11,7 +11,6 @@ import {
   StyledUserContents,
   StyledUserInfo,
   StyledUserName,
-  StyledUserRepositoryInfo,
 } from './styles';
 
 interface Props {
@@ -30,7 +29,6 @@ export default function UserInfo({ user, handleBookmark }: Props) {
     blog,
     email,
     company,
-    public_repos: publicRepos,
   } = user;
 
   const bookmarkProps = { id, avatarUrl, username };
@@ -78,9 +76,6 @@ export default function UserInfo({ user, handleBookmark }: Props) {
             </>
           )}
         </StyledUserContent>
-        <StyledUserRepositoryInfo>
-          {publicRepos} Repositories
-        </StyledUserRepositoryInfo>
       </StyledUserContents>
       <UserBookmarkButton
         bookmarkProps={bookmarkProps}
