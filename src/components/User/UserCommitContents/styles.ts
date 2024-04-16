@@ -1,14 +1,12 @@
-import { Link } from 'react-router-dom';
-
 import styled from 'styled-components';
 
-export const StyledCommitContent = styled(Link)`
+export const StyledCommitContent = styled.a`
   width: 100%;
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: 12px;
-  padding: 8px;
+  padding: 10px;
   cursor: pointer;
   color: ${(props) => props.theme.fontColor.default};
 
@@ -53,13 +51,26 @@ export const StyledCommitSectionContent = styled.div`
   width: 100%;
 `;
 
-export const StyledCommitMessage = styled.div`
+export const StyledCommitSectionContentDate = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+  font-size: 12px;
+  font-weight: 300;
+`;
+
+export const StyledCommitMessageWrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   font-size: 14px;
   font-weight: bold;
   gap: 8px;
+`;
+
+export const StyledCommitMessage = styled.div`
+  color: ${(props) => props.theme.fontColor.accent};
 `;
 
 export const StyledCommentWapper = styled.div`
@@ -69,6 +80,7 @@ export const StyledCommentWapper = styled.div`
   justify-content: end;
   font-weight: bold;
   font-size: 14px;
+
   svg {
     path {
       fill: ${(props) => props.theme.fontColor.default};
