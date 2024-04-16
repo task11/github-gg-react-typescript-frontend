@@ -22,16 +22,25 @@ export const StyledUserName = styled.div`
   align-items: flex-start;
   gap: 14px;
 
-  strong {
-    font-size: 24px;
-    font-weight: 600;
-  }
-
   .username {
     font-size: 20px;
   }
 
   .bio {
+    word-break: break-all;
+  }
+`;
+
+export const StyledUserNameHeader = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+
+  strong {
+    font-size: 24px;
+    font-weight: 600;
     word-break: break-all;
   }
 `;

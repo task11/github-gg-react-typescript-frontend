@@ -7,7 +7,9 @@ import {
   StyledCommitContent,
   StyledCommitDate,
   StyledCommitMessage,
+  StyledCommitMessageWrapper,
   StyledCommitSectionContent,
+  StyledCommitSectionContentDate,
   StyledCommitSectionHeader,
 } from './styles';
 
@@ -16,28 +18,37 @@ interface Props {
 }
 
 export default function UserCommitContents({ commitContent }: Props) {
-  const { author, commit } = commitContent;
+  const { html_url: commitUrl, commit } = commitContent;
 
   const commitDate = commit.author.date.split('T')[0];
 
+  const repoName = commit.url.split('/').slice(5, 6)[0];
+
   return (
-    <StyledCommitContent to={`/${author.login}/commit/${commit.tree.sha}`}>
+    <StyledCommitContent href={commitUrl} target="_blank">
       <StyledCommitDate>
         <StyledCommitSectionHeader>
-          <span className="label">Date</span>
+          <span className="label">Repository</span>
         </StyledCommitSectionHeader>
         <StyledCommitSectionContent>
-          <span>{commitDate}</span>
+          <span>{repoName}</span>
         </StyledCommitSectionContent>
       </StyledCommitDate>
-      <StyledCommitMessage>
+      <StyledCommitMessageWrapper>
         <StyledCommitSectionHeader>
-          <span className="label">Message</span>
+          <span className="label">Commit Message</span>
         </StyledCommitSectionHeader>
-        <div>{commit.message}</div>
-      </StyledCommitMessage>
+        <StyledCommitMessage>
+          <span>{commit.message}</span>
+        </StyledCommitMessage>
+      </StyledCommitMessageWrapper>
 
       <StyledCommentWapper>
+        <StyledCommitDate>
+          <StyledCommitSectionContentDate>
+            <span>{commitDate}</span>
+          </StyledCommitSectionContentDate>
+        </StyledCommitDate>
         <Icons.Comment />
         <div>{commit.comment_count}</div>
       </StyledCommentWapper>

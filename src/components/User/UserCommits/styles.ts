@@ -4,7 +4,6 @@ export const StyledUserCommit = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 `;
 
 export const StyledUserCommitsHeader = styled.header`
@@ -27,4 +26,15 @@ export const StyledUserCommits = styled.div`
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   border-radius: 8px;
   transition: background 0.2s ease-in;
+`;
+
+export const StyledEmptyCommits = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: ${(props) => props.theme.fontColor.accent};
 `;

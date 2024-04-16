@@ -3,6 +3,7 @@ import { RepositoriesProps } from '../../../types';
 import UserRepository from '../UserRepository';
 
 import {
+  StyledEmptyRepositories,
   StyledUserRepositories,
   StyledUserRepositoriesGrid,
   StyledUserRepositoryInfo,
@@ -22,11 +23,17 @@ export default function UserRepositories({
       <StyledUserRepositoryInfo>
         {publicRepositoryCounts} Repositories
       </StyledUserRepositoryInfo>
-      <StyledUserRepositoriesGrid>
-        {repositories.map((repository) => (
-          <UserRepository key={repository.id} repository={repository} />
-        ))}
-      </StyledUserRepositoriesGrid>
+      {repositories.length === 0 ? (
+        <StyledEmptyRepositories>
+          There are no repositories to display
+        </StyledEmptyRepositories>
+      ) : (
+        <StyledUserRepositoriesGrid>
+          {repositories.map((repository) => (
+            <UserRepository key={repository.id} repository={repository} />
+          ))}
+        </StyledUserRepositoriesGrid>
+      )}
     </StyledUserRepositories>
   );
 }

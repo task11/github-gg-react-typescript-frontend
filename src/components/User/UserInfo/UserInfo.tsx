@@ -1,5 +1,5 @@
 import Avatar from '../../Avatar/Avatar';
-import UserBookmarkButton from '../UserBookmarkButton/UserBookmarkButton';
+import UserBookmarkButton from '../UserBookmarkButton';
 
 import useToggleBookmark from '../../../utils/hooks/useToggleBookmark';
 
@@ -11,6 +11,7 @@ import {
   StyledUserContents,
   StyledUserInfo,
   StyledUserName,
+  StyledUserNameHeader,
 } from './styles';
 
 interface Props {
@@ -38,7 +39,15 @@ export default function UserInfo({ user, handleBookmark }: Props) {
       <StyledUserInfo>
         <Avatar src={avatarUrl} size="lg" />
         <StyledUserName>
-          <strong>{username}</strong>
+          <StyledUserNameHeader>
+            <strong>{username}</strong>
+            <UserBookmarkButton
+              bookmarkProps={bookmarkProps}
+              handleBookmark={handleBookmark}
+              toggleBookmark={toggleBookmark}
+              isBookmark={isBookmark}
+            />
+          </StyledUserNameHeader>
           <span className="username">{name}</span>
           <span className="bio">{bio}</span>
         </StyledUserName>
@@ -77,12 +86,6 @@ export default function UserInfo({ user, handleBookmark }: Props) {
           )}
         </StyledUserContent>
       </StyledUserContents>
-      <UserBookmarkButton
-        bookmarkProps={bookmarkProps}
-        handleBookmark={handleBookmark}
-        toggleBookmark={toggleBookmark}
-        isBookmark={isBookmark}
-      />
     </StyledUserInfoWrapper>
   );
 }

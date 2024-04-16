@@ -21,3 +21,14 @@ export const StyledUserRepositoryInfo = styled.header`
   border-top: 1px solid ${(props) => props.theme.borderColor.top};
   color: ${(props) => props.theme.fontColor.default};
 `;
+
+export const StyledEmptyRepositories = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: ${(props) => props.theme.fontColor.accent};
+`;
