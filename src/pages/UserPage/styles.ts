@@ -23,10 +23,6 @@ export const StyledUserContainer = styled.div`
   }
 `;
 
-export const StyledTarget = styled.div`
-  height: 1px;
-`;
-
 export const StyledErrorWrapper = styled.div`
   width: 100%;
   height: 300px;
