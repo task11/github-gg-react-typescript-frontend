@@ -1,8 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { useSearchParams } from 'react-router-dom';
-import useQueryParams from '../useQueryParams'; // 가정한 파일 경로입니다. 실제 경로에 맞게 조정해 주세요.
+import useQueryParams from '../useQueryParams';
 
-// useSearchParams 훅을 모의합니다.
 jest.mock('react-router-dom', () => ({
   useSearchParams: jest.fn(),
 }));
@@ -24,7 +23,6 @@ describe('useQueryParams 테스트', () => {
 
     const { result } = renderHook(() => useQueryParams('nothing'));
 
-    // 예상 결과를 검증합니다.
     expect(result.current.queryString).toBeNull();
   });
 });
