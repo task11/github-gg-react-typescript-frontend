@@ -65,7 +65,7 @@ export default function UserInfo({ username }: Props) {
   const bookmarkProps = { id, avatarUrl, username: login };
 
   return (
-    <StyledUserInfoWrapper>
+    <StyledUserInfoWrapper data-testid="user-info">
       <StyledUserInfo>
         <Avatar src={avatarUrl} size="lg" />
         <StyledUserName>
