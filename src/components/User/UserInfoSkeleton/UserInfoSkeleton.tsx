@@ -8,7 +8,7 @@ import {
 
 export default function UserInfoSkeleton() {
   return (
-    <StyledUserInfoSkeleton>
+    <StyledUserInfoSkeleton data-testid="user-info-skeleton">
       <StyledUserAvatarWrapper>
         <StyledUserAvatarSkeleton />
       </StyledUserAvatarWrapper>

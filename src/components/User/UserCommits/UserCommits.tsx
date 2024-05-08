@@ -22,7 +22,7 @@ export default function UserCommits({ username }: Props) {
   }
 
   return (
-    <StyledUserCommit>
+    <StyledUserCommit data-testid="user-commits">
       <StyledUserCommitsHeader>Last 3 Commits</StyledUserCommitsHeader>
       {commits.length === 0 ? (
         <StyledEmptyCommits>
