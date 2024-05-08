@@ -59,7 +59,7 @@ export default function UserRepositories({ username }: Props) {
 
   return (
     <>
-      <StyledUserRepositories>
+      <StyledUserRepositories data-testid="user-repositories">
         <StyledUserRepositoryInfo>
           {user?.public_repos} Repositories
         </StyledUserRepositoryInfo>
