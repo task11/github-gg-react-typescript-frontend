@@ -8,6 +8,16 @@ export const StyledUserInfoWrapper = styled.div`
   position: relative;
 `;
 
+export const StyledUserEmpty = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  height: 150px;
+  background-color: ${(props) => props.theme.bgColor.card};
+`;
+
 export const StyledUserInfo = styled.div`
   display: flex;
   width: 100%;
