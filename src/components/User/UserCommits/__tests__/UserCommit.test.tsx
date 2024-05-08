@@ -16,14 +16,19 @@ jest.mock('../../../../utils/hooks/useRecentCommits', () => ({
   __esModule: true,
   default: jest.fn(),
 }));
-jest.mock('../../UserCommitsSkeleton', () => () => (
-  <div>UserCommitsSkeleton</div>
-));
-jest.mock('../../UserCommitContents', () => () => (
-  <div>UserCommitContents</div>
-));
+jest.mock('../../UserCommitsSkeleton');
+jest.mock('../../UserCommitContents');
 
 describe('UserCommits 컴포넌트', () => {
+  beforeEach(() => {
+    (UserCommitsSkeleton as jest.Mock).mockImplementation(() => (
+      <div>UserCommitsSkeleton</div>
+    ));
+    (UserCommitContents as jest.Mock).mockImplementation(() => (
+      <div>UserCommitContents</div>
+    ));
+  });
+
   const renderer = (username: string) => {
     const { getByText, getAllByText } = render(
       <UserCommits username={username} />,
