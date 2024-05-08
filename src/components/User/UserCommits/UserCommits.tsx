@@ -17,10 +17,12 @@ interface Props {
 export default function UserCommits({ username }: Props) {
   const { commits, isLoading } = useRecentCommits(username || '');
 
-  if (isLoading) return <UserCommitsSkeleton />;
+  if (isLoading) {
+    return <UserCommitsSkeleton />;
+  }
 
   return (
-    <StyledUserCommit>
+    <StyledUserCommit data-testid="user-commits">
       <StyledUserCommitsHeader>Last 3 Commits</StyledUserCommitsHeader>
       {commits.length === 0 ? (
         <StyledEmptyCommits>

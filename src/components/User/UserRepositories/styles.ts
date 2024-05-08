@@ -32,3 +32,7 @@ export const StyledEmptyRepositories = styled.div`
   font-weight: bold;
   color: ${(props) => props.theme.fontColor.accent};
 `;
+
+export const StyledTarget = styled.div`
+  height: 1px;
+`;

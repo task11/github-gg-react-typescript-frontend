@@ -1,9 +1,12 @@
 import Avatar from '../../Avatar/Avatar';
 import UserBookmarkButton from '../UserBookmarkButton';
+import UserInfoSkeleton from '../UserInfoSkeleton';
 
+import BookmarkService from '../../../utils/services/Bookmark.service';
+import useUser from '../../../utils/hooks/useUser';
 import useToggleBookmark from '../../../utils/hooks/useToggleBookmark';
 
-import { QueryDataProps, UserProps } from '../../../types';
+import { QueryDataProps } from '../../../types';
 
 import {
   StyledUserInfoWrapper,
@@ -12,35 +15,62 @@ import {
   StyledUserInfo,
   StyledUserName,
   StyledUserNameHeader,
+  StyledUserEmpty,
 } from './styles';
 
 interface Props {
-  user: UserProps;
-  handleBookmark: (data: QueryDataProps) => void;
+  username: string | undefined;
 }
 
-export default function UserInfo({ user, handleBookmark }: Props) {
-  const { isBookmark, toggleBookmark } = useToggleBookmark(user.id);
+export default function UserInfo({ username }: Props) {
+  const handleBookmark = (queryData: QueryDataProps) => {
+    BookmarkService.set(queryData);
+  };
+
+  const { data, isLoading, isError } = useUser(username as string);
+
+  const { isBookmark, toggleBookmark } = useToggleBookmark(data?.id);
+
+  if (isLoading) {
+    return <UserInfoSkeleton />;
+  }
+
+  if (!data) {
+    return (
+      <StyledUserInfoWrapper>
+        <StyledUserEmpty>There is no user data</StyledUserEmpty>
+      </StyledUserInfoWrapper>
+    );
+  }
+
+  if (isError) {
+    return (
+      <StyledUserInfoWrapper>
+        <StyledUserEmpty>Somethings Error</StyledUserEmpty>
+      </StyledUserInfoWrapper>
+    );
+  }
+
   const {
     avatar_url: avatarUrl,
-    login: username,
+    login,
     id,
     name,
     bio,
     blog,
     email,
     company,
-  } = user;
+  } = data;
 
-  const bookmarkProps = { id, avatarUrl, username };
+  const bookmarkProps = { id, avatarUrl, username: login };
 
   return (
-    <StyledUserInfoWrapper>
+    <StyledUserInfoWrapper data-testid="user-info">
       <StyledUserInfo>
         <Avatar src={avatarUrl} size="lg" />
         <StyledUserName>
           <StyledUserNameHeader>
-            <strong>{username}</strong>
+            <strong>{login}</strong>
             <UserBookmarkButton
               bookmarkProps={bookmarkProps}
               handleBookmark={handleBookmark}
