@@ -1,5 +1,6 @@
-import { useRecoilValue } from 'recoil';
-import { searchQueryAtom } from '../../../store';
+import { useAtomValue } from 'jotai';
+
+import { searchQueryAtom } from '../../../atoms/searchQuery';
 
 import SearchRecentList from '../SearchRecentList';
 import SearchResultList from '../SearchResultList';
@@ -12,7 +13,7 @@ import useSearch from '../../../utils/hooks/useSearch';
 import { StyledSearchResult } from './styles';
 
 export default function SearchResultSummary() {
-  const searchQuery = useRecoilValue(searchQueryAtom);
+  const searchQuery = useAtomValue(searchQueryAtom);
 
   const { isSearching } = useSearchQuery();
 

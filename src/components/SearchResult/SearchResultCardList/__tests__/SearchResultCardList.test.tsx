@@ -1,10 +1,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
-
-import { RecoilRoot } from 'recoil';
 
 import { CustomThemeProvider } from '../../../../styles';
 
@@ -226,11 +224,9 @@ describe('SearchResultCardList', () => {
     const { getByText } = render(<SearchResultCardList />, {
       wrapper: ({ children }) => (
         <QueryClientProvider client={queryClient}>
-          <RecoilRoot>
-            <MemoryRouter>
-              <CustomThemeProvider>{children}</CustomThemeProvider>
-            </MemoryRouter>
-          </RecoilRoot>
+          <MemoryRouter>
+            <CustomThemeProvider>{children}</CustomThemeProvider>
+          </MemoryRouter>
         </QueryClientProvider>
       ),
     });
@@ -251,13 +247,11 @@ describe('SearchResultCardList', () => {
   it('should render SearchResultCard for each item in the search result', async () => {
     render(
       <QueryClientProvider client={queryClient}>
-        <RecoilRoot>
-          <MemoryRouter initialEntries={['/search?q=test']}>
-            <CustomThemeProvider>
-              <SearchResultCardList />
-            </CustomThemeProvider>
-          </MemoryRouter>
-        </RecoilRoot>
+        <MemoryRouter initialEntries={['/search?q=test']}>
+          <CustomThemeProvider>
+            <SearchResultCardList />
+          </CustomThemeProvider>
+        </MemoryRouter>
       </QueryClientProvider>,
     );
 

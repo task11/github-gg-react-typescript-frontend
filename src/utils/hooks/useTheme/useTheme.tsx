@@ -1,14 +1,14 @@
 import { useCallback, useLayoutEffect } from 'react';
-import { useRecoilState } from 'recoil';
 
-import { themeAtom } from '../../../store';
+import { useAtom } from 'jotai';
 
-import { Mode } from '../../../types';
+import { modeAtom } from '../../../atoms/mode';
 import { THEME_MODE } from '../../common';
+
 import LocalService from '../../services/Local.service';
 
 export default function useTheme() {
-  const [theme, setTheme] = useRecoilState(themeAtom);
+  const [theme, setTheme] = useAtom(modeAtom);
 
   const onChangeTheme = useCallback(() => {
     const newTheme =
@@ -19,21 +19,9 @@ export default function useTheme() {
   }, [theme]);
 
   useLayoutEffect(() => {
-    const currentTheme = LocalService.get('theme') as Mode;
-
-    if (
-      currentTheme &&
-      [THEME_MODE.dark, THEME_MODE.light].includes(currentTheme)
-    ) {
-      setTheme(currentTheme);
-      return;
-    }
-
-    if (
-      window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-    ) {
-      setTheme(THEME_MODE.dark);
+    const storedTheme = LocalService.get('theme');
+    if (!storedTheme) {
+      LocalService.set('theme', theme);
     }
   }, []);
 

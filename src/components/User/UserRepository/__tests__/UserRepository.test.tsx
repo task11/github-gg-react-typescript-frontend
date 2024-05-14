@@ -4,8 +4,6 @@ import { render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import { RecoilRoot } from 'recoil';
-
 import { CustomThemeProvider } from '../../../../styles';
 
 import { RepositoryProps } from '../../../../types';
@@ -164,11 +162,9 @@ describe('UserRepository', () => {
     const { getByText } = render(<UserRepository repository={repository} />, {
       wrapper: ({ children }) => (
         <QueryClientProvider client={queryClient}>
-          <RecoilRoot>
-            <MemoryRouter>
-              <CustomThemeProvider>{children}</CustomThemeProvider>
-            </MemoryRouter>
-          </RecoilRoot>
+          <MemoryRouter>
+            <CustomThemeProvider>{children}</CustomThemeProvider>
+          </MemoryRouter>
         </QueryClientProvider>
       ),
     });

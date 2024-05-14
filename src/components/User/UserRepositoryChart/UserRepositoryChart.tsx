@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
-import { useRecoilValue } from 'recoil';
+
+import { useAtomValue } from 'jotai';
 
 import Chart from 'react-apexcharts';
 
@@ -7,7 +8,7 @@ import useUserRepository from '../../../utils/hooks/useUserRepository';
 
 import { RepositoryProps } from '../../../types';
 
-import { themeAtom } from '../../../store';
+import { modeAtom } from '../../../atoms/mode';
 
 import UserRepositoryChartSkeleton from '../UserRepositoryChartSkeleton';
 import Error from '../../Error';
@@ -27,7 +28,7 @@ interface Props {
 }
 
 export default function UserRepositoryChart({ repository }: Props) {
-  const mode = useRecoilValue(themeAtom);
+  const mode = useAtomValue(modeAtom);
   const { data, isLoading, isError } = useUserRepository(
     repository.owner.login,
     repository.name,

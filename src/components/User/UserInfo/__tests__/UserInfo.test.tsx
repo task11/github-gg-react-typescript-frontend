@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { RecoilRoot } from 'recoil';
+
 import { MemoryRouter } from 'react-router-dom';
 
 import UserInfo from '../UserInfo';
@@ -71,13 +71,11 @@ describe('UserInfo Component', () => {
   it('should render user information correctly', () => {
     const { getByText } = render(
       <QueryClientProvider client={queryClient}>
-        <RecoilRoot>
-          <MemoryRouter initialEntries={['/user/testuser']}>
-            <CustomThemeProvider>
-              <UserInfo username="testuser" />
-            </CustomThemeProvider>
-          </MemoryRouter>
-        </RecoilRoot>
+        <MemoryRouter initialEntries={['/user/testuser']}>
+          <CustomThemeProvider>
+            <UserInfo username="testuser" />
+          </CustomThemeProvider>
+        </MemoryRouter>
       </QueryClientProvider>,
     );
 

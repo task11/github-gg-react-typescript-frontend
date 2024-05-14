@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { searchQueryAtom } from '../../../store';
+import { useAtom } from 'jotai';
+
+import { searchQueryAtom } from '../../../atoms/searchQuery';
 
 import Icons from '../../Icons';
 import useHandleSearch from '../../../utils/hooks/useHandleSearch';
@@ -20,7 +21,7 @@ import {
 } from './styles';
 
 export default function SearchForm() {
-  const [searchQuery, setSearchQuery] = useRecoilState(searchQueryAtom);
+  const [searchQuery, setSearchQuery] = useAtom(searchQueryAtom);
 
   const { isSearching, setIsFocus, handleSearchQuery, initSearchQuery } =
     useSearchQuery();
