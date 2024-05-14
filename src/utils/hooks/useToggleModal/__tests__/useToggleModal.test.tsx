@@ -5,9 +5,7 @@ import useToggleModal from '../useToggleModal';
 
 describe('UseToggleModal', () => {
   const renderer = () => {
-    const { result } = renderHook(() => useToggleModal(), {
-      wrapper: ({ children }) => <RecoilRoot>{children}</RecoilRoot>,
-    });
+    const { result } = renderHook(() => useToggleModal());
     return result;
   };
 
