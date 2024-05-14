@@ -1,15 +1,11 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { RecoilRoot } from 'recoil';
-
 import { THEME_MODE } from '../../../common';
 import useTheme from '../useTheme';
 
 describe('UseTheme', () => {
   const renderer = () => {
-    const { result } = renderHook(() => useTheme(), {
-      wrapper: ({ children }) => <RecoilRoot>{children}</RecoilRoot>,
-    });
+    const { result } = renderHook(() => useTheme());
     return result;
   };
 

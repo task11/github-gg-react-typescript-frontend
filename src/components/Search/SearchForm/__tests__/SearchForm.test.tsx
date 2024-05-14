@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { RecoilRoot } from 'recoil';
+
 import { MemoryRouter } from 'react-router-dom';
 import { CustomThemeProvider } from '../../../../styles';
 
@@ -14,11 +14,9 @@ describe('SearchForm', () => {
     const { getByText } = render(<SearchForm />, {
       wrapper: ({ children }) => (
         <QueryClientProvider client={queryClient}>
-          <RecoilRoot>
-            <MemoryRouter>
-              <CustomThemeProvider>{children}</CustomThemeProvider>
-            </MemoryRouter>
-          </RecoilRoot>
+          <MemoryRouter>
+            <CustomThemeProvider>{children}</CustomThemeProvider>
+          </MemoryRouter>
         </QueryClientProvider>
       ),
     });

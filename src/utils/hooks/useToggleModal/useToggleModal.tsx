@@ -1,9 +1,10 @@
 import { useCallback } from 'react';
-import { useRecoilState } from 'recoil';
-import { modalAtom } from '../../../store/modal';
+import { useAtom } from 'jotai';
+
+import { modalAtom } from '../../../atoms/modal';
 
 export default function useToggleModal() {
-  const [modalState, setModalState] = useRecoilState(modalAtom);
+  const [modalState, setModalState] = useAtom(modalAtom);
 
   const toggleModal = useCallback(() => {
     setModalState((prev) => !prev);

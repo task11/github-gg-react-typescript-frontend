@@ -4,8 +4,6 @@ import { render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import { RecoilRoot } from 'recoil';
-
 import { CustomThemeProvider } from '../../../../styles';
 
 import SearchResultHeader from '../SearchResultHeader';
@@ -17,11 +15,9 @@ describe('SearchResultHeader', () => {
     const { getByText } = render(<SearchResultHeader />, {
       wrapper: ({ children }) => (
         <QueryClientProvider client={queryClient}>
-          <RecoilRoot>
-            <MemoryRouter>
-              <CustomThemeProvider>{children}</CustomThemeProvider>
-            </MemoryRouter>
-          </RecoilRoot>
+          <MemoryRouter>
+            <CustomThemeProvider>{children}</CustomThemeProvider>
+          </MemoryRouter>
         </QueryClientProvider>
       ),
     });

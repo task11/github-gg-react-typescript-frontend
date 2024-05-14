@@ -1,7 +1,5 @@
 import {
   StyledUserSkeleton,
-  StyledUserContentWrapper,
-  StyledUserContentSkeleton,
   StyledUserRepositoryWrapper,
   StyledUserRepositoriesSkeleton,
 } from './styles';
