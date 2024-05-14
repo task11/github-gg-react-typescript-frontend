@@ -1,7 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { RecoilRoot } from 'recoil';
-
 import { QueryDataProps } from '../../../../types/queryData';
 
 import useHandleSearch from '../useHandleSearch';
@@ -13,9 +11,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('UseHandleSearch', () => {
   const renderer = () => {
-    const { result } = renderHook(() => useHandleSearch(), {
-      wrapper: ({ children }) => <RecoilRoot>{children}</RecoilRoot>,
-    });
+    const { result } = renderHook(() => useHandleSearch());
     return result;
   };
 
