@@ -1,15 +1,16 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useRecoilValue } from 'recoil';
-import { searchQueryAtom } from '../../../store';
+import { useAtomValue } from 'jotai';
+
+import { searchQueryAtom } from '../../../atoms/searchQuery';
 
 import { QueryDataProps } from '../../../types/queryData';
 
 import RecentService from '../../services/Recent.service';
 
 export default function useHandleSearch() {
-  const searchQuery = useRecoilValue(searchQueryAtom);
+  const searchQuery = useAtomValue(searchQueryAtom);
 
   const navigate = useNavigate();
 
