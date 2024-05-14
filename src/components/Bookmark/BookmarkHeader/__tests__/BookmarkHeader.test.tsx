@@ -4,8 +4,6 @@ import { render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import { RecoilRoot } from 'recoil';
-
 import { CustomThemeProvider } from '../../../../styles';
 
 import BookmarkHeader from '../BookmarkHeader';
@@ -19,11 +17,9 @@ describe('BookmarkHeader', () => {
     const { getByText } = render(<BookmarkHeader totalCount={totalCount} />, {
       wrapper: ({ children }) => (
         <QueryClientProvider client={queryClient}>
-          <RecoilRoot>
-            <MemoryRouter>
-              <CustomThemeProvider>{children}</CustomThemeProvider>
-            </MemoryRouter>
-          </RecoilRoot>
+          <MemoryRouter>
+            <CustomThemeProvider>{children}</CustomThemeProvider>
+          </MemoryRouter>
         </QueryClientProvider>
       ),
     });

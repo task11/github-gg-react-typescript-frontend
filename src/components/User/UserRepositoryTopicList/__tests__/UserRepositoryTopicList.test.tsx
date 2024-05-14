@@ -4,8 +4,6 @@ import { render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import { RecoilRoot } from 'recoil';
-
 import { CustomThemeProvider } from '../../../../styles';
 
 import UserRepositoryTopicList from '../UserRepositoryTopicList';
@@ -21,11 +19,9 @@ describe('UserRepositoryTopicList', () => {
       {
         wrapper: ({ children }) => (
           <QueryClientProvider client={queryClient}>
-            <RecoilRoot>
-              <MemoryRouter>
-                <CustomThemeProvider>{children}</CustomThemeProvider>
-              </MemoryRouter>
-            </RecoilRoot>
+            <MemoryRouter>
+              <CustomThemeProvider>{children}</CustomThemeProvider>
+            </MemoryRouter>
           </QueryClientProvider>
         ),
       },

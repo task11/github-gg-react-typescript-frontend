@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { useRecoilState } from 'recoil';
-import { searchQueryAtom } from '../../../store';
+
+import { useAtom } from 'jotai';
+
+import { searchQueryAtom } from '../../../atoms/searchQuery';
 
 export default function useSearchQuery() {
-  const [searchQuery, setSearchQuery] = useRecoilState(searchQueryAtom);
+  const [searchQuery, setSearchQuery] = useAtom(searchQueryAtom);
   const [isFocus, setIsFocus] = useState(false);
   const isSearching = searchQuery !== '' || isFocus;
 

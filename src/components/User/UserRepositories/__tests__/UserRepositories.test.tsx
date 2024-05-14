@@ -2,7 +2,7 @@ import { render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { RecoilRoot } from 'recoil';
+
 import { MemoryRouter } from 'react-router-dom';
 
 import * as useUserHook from '../../../../utils/hooks/useUser';
@@ -12,7 +12,6 @@ import * as useIntersectionObserverHook from '../../../../utils/hooks/useInterse
 import UserRepositories from '../UserRepositories';
 
 import { CustomThemeProvider } from '../../../../styles';
-import { RepositoryProps } from '../../../../types';
 
 jest.mock('../../../../utils/hooks/useUser');
 jest.mock('../../../../utils/hooks/useUserRepositories');
@@ -59,13 +58,11 @@ describe('UserRepositories Component', () => {
 
     const { getByText, getByTestId } = render(
       <QueryClientProvider client={queryClient}>
-        <RecoilRoot>
-          <MemoryRouter initialEntries={['/user/testuser']}>
-            <CustomThemeProvider>
-              <UserRepositories username="testuser" />
-            </CustomThemeProvider>
-          </MemoryRouter>
-        </RecoilRoot>
+        <MemoryRouter initialEntries={['/user/testuser']}>
+          <CustomThemeProvider>
+            <UserRepositories username="testuser" />
+          </CustomThemeProvider>
+        </MemoryRouter>
       </QueryClientProvider>,
     );
 

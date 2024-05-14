@@ -59,7 +59,7 @@ npm start
 ┣ 📂 lib /- 커스텀 라이브러리
 ┃ ┗ 📜 axios.ts /- axios 인스턴스
 ┣ 📂 pages /- 페이지 컴포넌트
-┣ 📂 store /- recoil atom 저장소
+┣ 📂 atoms /- jotai atom 저장소
 ┣ 📂 styles /- Styled-components config & Theme
 ┣ 📂 types /- 공용 타입
 ┣ 📂 utils /- 유틸 로직
@@ -83,7 +83,7 @@ npm start
   <img src="https://img.shields.io/badge/react-v18.2.0-61DAFB">
   <img src="https://img.shields.io/badge/typescript-v4.8.4-3178C6">
   <img src="https://img.shields.io/badge/axios-v1.1.3-black"/>
-  <img src="https://img.shields.io/badge/recoil-v0.7.6-blue">
+  <img src="https://img.shields.io/badge/jotai-v2.8.0-blue">
   <img src="https://img.shields.io/badge/react query-v4.16.1-red">
   <img src="https://img.shields.io/badge/styled_components-v4.8.4-FF69B4">
 </p>

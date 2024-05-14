@@ -2,8 +2,6 @@ import { render } from '@testing-library/react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { RecoilRoot } from 'recoil';
-
 import { CustomThemeProvider } from './styles';
 
 import App from './App';
@@ -14,11 +12,9 @@ describe('App', () => {
   it('Shows App component', () => {
     const { queryByText } = render(
       <QueryClientProvider client={queryClient}>
-        <RecoilRoot>
-          <CustomThemeProvider>
-            <App />
-          </CustomThemeProvider>
-        </RecoilRoot>
+        <CustomThemeProvider>
+          <App />
+        </CustomThemeProvider>
       </QueryClientProvider>,
     );
 
